@@ -1,5 +1,0 @@
-mixed-port: 7890
-allow-lan: true
-external-controller: 127.0.0.1:49863
-secret: c3e3312d-9fb5-493d-b04f-74432001d02b
-ipv6: false
