@@ -1,0 +1,22 @@
+$Configuration2Path = @(
+	(
+		'.\bash\.bash_profile',
+		"$HOME\"
+	),
+	(
+		'.\bash\.bashrc',
+		"$HOME\"
+	),
+	(
+		'.\bash\ep.bashrc',
+		"$HOME\"
+	),
+	(
+		'.\nvim\',
+		"$($Env:LOCALAPPDATA)\"
+	),
+	(
+		'.\rio\',
+		"$($Env:LOCALAPPDATA)\"
+	)
+)

@@ -40,6 +40,7 @@ Import-Module posh-git
 
 
 ####Set-PSReadLineOption -PredictionViewStyle ListView
+####Set-PSReadLineKeyHandler -Chord Tab -Function MenuComplete
 
 
 "`tSetting cd with ls" | Write-Host
@@ -51,7 +52,7 @@ function cd {
 
 
 "`tSetting user's shell variable" | Write-Host
-Set-Variable -Name 'Workstation' -Value 'C:\Users\PengChenxiang\OneDrive\Workstation' #'C:\Users\PengChenxiang\Workstation'
+####Set-Variable -Name 'Workstation' -Value 'C:\Users\PengChenxiang\OneDrive\Workstation' #'C:\Users\PengChenxiang\Workstation'
 Set-Variable -Name "EnableMyPrompt" -Value $true
 $Env:VIRTUAL_ENV_DISABLE_PROMPT = 1
 
