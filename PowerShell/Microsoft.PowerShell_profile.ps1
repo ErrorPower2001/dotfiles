@@ -9,22 +9,22 @@ $OutputEncoding = [System.Console]::InputEncoding = [System.Console]::OutputEnco
 "`tPowerShell parameter completion shim for the dotnet CLI" | Write-Host
 # PowerShell parameter completion shim for the dotnet CLI
 Register-ArgumentCompleter -Native -CommandName dotnet -ScriptBlock {
-	param($commandName, $wordToComplete, $cursorPosition)
-		dotnet complete --position $cursorPosition "$wordToComplete" | ForEach-Object {
-			[System.Management.Automation.CompletionResult]::new($_, $_, 'ParameterValue', $_)
-		}
+    param($commandName, $wordToComplete, $cursorPosition)
+    dotnet complete --position $cursorPosition "$wordToComplete" | ForEach-Object {
+        [System.Management.Automation.CompletionResult]::new($_, $_, 'ParameterValue', $_)
+    }
 }
 
 
 "`tPowerShell parameter completion shim for the winget" | Write-Host
 Register-ArgumentCompleter -Native -CommandName winget -ScriptBlock {
     param($wordToComplete, $commandAst, $cursorPosition)
-        [Console]::InputEncoding = [Console]::OutputEncoding = $OutputEncoding = [System.Text.Utf8Encoding]::new()
-        $Local:word = $wordToComplete.Replace('"', '""')
-        $Local:ast = $commandAst.ToString().Replace('"', '""')
-        winget complete --word="$Local:word" --commandline "$Local:ast" --position $cursorPosition | ForEach-Object {
-            [System.Management.Automation.CompletionResult]::new($_, $_, 'ParameterValue', $_)
-        }
+    [Console]::InputEncoding = [Console]::OutputEncoding = $OutputEncoding = [System.Text.Utf8Encoding]::new()
+    $Local:word = $wordToComplete.Replace('"', '""')
+    $Local:ast = $commandAst.ToString().Replace('"', '""')
+    winget complete --word="$Local:word" --commandline "$Local:ast" --position $cursorPosition | ForEach-Object {
+        [System.Management.Automation.CompletionResult]::new($_, $_, 'ParameterValue', $_)
+    }
 }
 
 
@@ -46,8 +46,8 @@ Import-Module posh-git
 "`tSetting cd with ls" | Write-Host
 Remove-Alias -Name cd
 function cd {
-	Set-Location -Path $args[0]
-	Get-ChildItem
+    Set-Location -Path $args[0]
+    Get-ChildItem
 }
 
 
