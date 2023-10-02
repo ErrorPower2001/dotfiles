@@ -1,0 +1,64 @@
+{
+	"version" : {
+		/* Version of tpp the settings are intended for, to make sure the settings are useful and to detect version changes
+		*/
+		"version" : "0.8.4"
+	},
+	"telemetry" : {
+		/* Directory where to store the telemetry logs
+		*/
+		"dir" : "C:\\Users\\PengChenxiang\\AppData\\Local\\Temp\\terminalpp\\telemetry"
+	},
+	"renderer" : {
+		"font" : {
+			/* Font to render default size characters
+			*/
+			"family" : "Maple Mono SC NF",
+			/* Font to render double width characters
+			*/
+			"doubleWidthFamily" : "Maple Mono SC NF"
+		}
+	},
+	"remoteFiles" : {
+		/* Directory to which the remote files should be downloaded. If empty, temporary directory will be used.
+		*/
+		"dir" : "C:\\Users\\PengChenxiang\\AppData\\Local\\Temp\\terminalpp\\remoteFiles"
+	},
+	/* Name of the default session which will be opened when terminal starts
+	*/
+	"defaultSession" : "pwsh",
+	/* List of known sessions
+	*/
+	"sessions" : [
+		/* cmd.exe
+		*/
+		{
+			"name" : "cmd.exe",
+			"command" : [
+				"cmd.exe"
+			],
+			"workingDirectory" : "C:\\Users\\PengChenxiang"
+		},
+		/* Powershell - with the default blue background and white text
+		*/
+		{
+			"name" : "powershell",
+			"palette" : {
+				"defaultForeground" : "ffffff",
+				"defaultBackground" : "#0000ff"
+			},
+			"command" : [
+				"powershell.exe"
+			],
+			"workingDirectory" : "C:\\Users\\PengChenxiang"
+		},
+		{
+			"name": "pwsh",
+			"command": [
+				"pwsh",
+				"--login"
+			],
+			"workingDirectory" : "C:\\Users\\PengChenxiang"
+		}
+	]
+}
