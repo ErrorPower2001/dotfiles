@@ -3,7 +3,6 @@
 # Default cursor is Block
 # Other available options are: '_' and '|'
 #
-##cursor = '▇'
 cursor = '_'
 
 # Blinking Cursor
@@ -69,9 +68,9 @@ performance = "High"
 #   width = 600
 #   height = 400
 #   mode = "Windowed"
-[window]
-	width = 960
-	height = 540
+window.width = 1280
+window.height = 720
+window.mode = "Maximized"
 
 # Background configuration
 #
@@ -114,6 +113,11 @@ performance = "High"
 # [fonts]
 #   family = "cascadiamono"
 #
+# You can also specify extra fonts to load
+# [fonts]
+#   extras = [{ family = "Microsoft JhengHei" }]
+#
+#
 # Example
 #   [fonts]
 #   size = 18
@@ -137,26 +141,25 @@ performance = "High"
 #   family = "cascadiamono"
 #   style = "italic"
 #   weight = 800
-#
-[fonts]
-    family = "Maple Mono SC NF"
-    size = 18
-[fonts.regular]
-    family = "Maple Mono SC NF"
-    style = "Regular"
-    weight = 400
-[fonts.bold]
-    family = "Maple Mono SC NF"
-    style = "Bold"
-    weight = 800
-[fonts.italic]
-    family = "Maple Mono SC NF"
-    style = "Italic"
-    weight = 400
-[fonts.bold-italic]
-    family = "Maple Mono SC NF"
-    style = "BoldItalic"
-    weight = 800
+fonts.family = "Maple Mono SC NF"
+fonts.extras = []
+fonts.size = 20
+
+fonts.regular.family = "Maple Mono SC NF"
+fonts.regular.style = "Regular"
+fonts.regular.weight = 400
+
+fonts.bold.family = "Maple Mono SC NF"
+fonts.bold.style = "Bold"
+fonts.bold.weight = 800
+
+fonts.italic.family = "Maple Mono SC NF"
+fonts.italic.style = "Italic"
+fonts.italic.weight = 400
+
+fonts.bold-italic.family = "Maple Mono SC NF"
+fonts.bold-italic.style = "BoldItalic"
+fonts.bold-italic.weight = 800
 
 # Navigation
 #
@@ -180,11 +183,9 @@ performance = "High"
 #   use-current-path = false
 #   color-automation = []
 #   macos-hide-window-buttons = false
-#
-[navigation]
-    mode = "BottomTab"
-    clickable = true
-    use-current-path = true
+navigation.mode = "BottomTab"
+navigation.clickable = true
+navigation.use-current-path = false
 
 # Shell
 #
@@ -196,10 +197,19 @@ performance = "High"
 #   - (Linux/BSD) user login shell
 #   - (Windows) powershell
 #
-# Example:
+# Example 1 using fish shell from bin path:
+#
 #   shell = { program = "/bin/fish", args = ["--login"] }
 #
-shell = { program = "C:/Program Files/PowerShell/7/pwsh.exe" }
+# Example 2 for Windows using powershell
+#
+#   shell = { program = "pwsh", args = [] }
+#
+# Example 3 for Windows using powershell with login
+#
+#   shell = { program = "pwsh", args = ["-l"] }
+shell.program = "pwsh"
+shell.args = []
 
 # Startup directory
 #
@@ -210,6 +220,7 @@ shell = { program = "C:/Program Files/PowerShell/7/pwsh.exe" }
 #
 # Example
 #  working-dir = "/Users/raphael/Documents/"
+working-dir = "C:/Users/PengChenxiang/"
 
 # Environment variables
 #
