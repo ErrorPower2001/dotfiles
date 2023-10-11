@@ -1,45 +1,54 @@
+"="="="="="="="="="="="="="="="="="="="="="="="="="="="="="="="=
+" Title style 1: 64
+"="="="="="="="="="="="="="="="="="="="="="="="="="="="="="="="=
+
+"=============================================================="
+" Title style 2: 64
+"=============================================================="
+
+"=============================================================="
 " Transitioning from Vim
 " 从 vim 迁移到 neovim
-"
+"=============================================================="
 """"set runtimepath^=~\.vim
 """"set runtimepath+=~\.vim\after
 """"let &packpath = &runtimepath
 """"source ~\_vimrc
 
+
+"=============================================================="
 " Setting neovim shell to PowerShell
 " 设置 neovim 的 shell 为 pwsh
-"
+"=============================================================="
 """"set shell=C:\\Users\\PengChenxiang\\AppData\\Local\\Microsoft\\WindowsApps\\pwsh.exe
 """"set shellcmdflag=\ -c
 """"set shellquote=\"
 """"set shellxquote=
-"
+
 """"set shell=pwsh
 """"set shellcmdflag=\ -NoProfile\ -c
 
+
+"=============================================================="
+" Preference/Options
+" 偏好选项
+"=============================================================="
 " Backup file's extent
 " 备份文件后缀名
 set backupext=.bak
 
-" Setting input mode views
-" 设置输入模式显示
-""""set showmode
-
 " Setting line number to relative
-" 显示行号
+" 显示行号和相对行号
 set number relativenumber
 
 " Setting nowrap
-" 设置不折叠行
+" 设置不自动换行
 set nowrap
 
 " Setting always show ruler
 " 总是显示光标位置
 set ruler
 
-" Searching
-" 搜索
-"
 " Setting search options
 " 高亮搜索结果
 set hlsearch
@@ -64,19 +73,42 @@ set listchars=tab:\|->,multispace:\|···,trail:-,nbsp:+
 " 空格与制表符，隐藏字符显示
 set list
 
+" Set language to chinese
+" 设置 vim 语言
+""""language chinese_china
+language C
+
+" Cursor No Style
+" 光标无样式（跟随 Terminal）
+""""set guicursor=
+
+" Scrolloffset Lines
+" 滚动偏移行数
+set scrolloff=999
+
+" Off all bell
+" 关闭提示音
+set belloff=all
+set t_vb=
+
+
+"=============================================================="
 " packadd plugin
-"
+" 在 'packpath' 里搜索可选的插件目录，然后执行找到的插件文件。
+"=============================================================="
 " 启用 matchit 插件
 " 该插件使 % 命令可跳转到匹配的 HTML 标签、Vim 脚本中的 if/else/endif 等。
 packadd! matchit
 
+
+"=============================================================="
 " Vim-Plug
-"
 " Plugins will be downloaded under the specified directory.
 " vim-plug 插件设置
+"=============================================================="
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
-
 " Declare the list of plugins.
+
 	" neovim 官方 lsp 插件
 	""""Plug 'neovim/nvim-lspconfig'
 
@@ -128,61 +160,38 @@ call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
+
+"=============================================================="
+" Plug configuration
+" 插件配置
+"=============================================================="
 " junegunn/seoul256.vim
-"
+"{{{
 " Unified color scheme (default: dark)
 let g:seoul256_background = 235
+"}}}
 
+" Setting color scheme
+"{{{
 " Switch
 """"set background=dark
 """"set background=light
-
-" Set color
-"
 " Dark color scheme
 colo seoul256
 " Light color scheme
 """"colo seoul256-light
+"}}}
 
-" vim-ps1 config
-"
+" pprovost/vim-ps1
+"{{{
 """"let g:ps1_nofold_blocks = 1
 """"let g:ps1_nofold_sig = 1
 """"set nofoldenable
+"}}}
 
 " Lsp settings
-"
+"{{{
 " Cs
-let g:LanguageClient_serverCommands = { 'cs': ['csharp-ls'] }
+""""let g:LanguageClient_serverCommands = { 'cs': ['csharp-ls'] }
+"}}}
 
-" Set language to chinese
-""""language chinese_china
-""""set langmenu=zh_cn.utf-8
-language C
-
-" Coursour No Style
-""""set guicursor=
-
-" Scrolloffset Lines
-set scrolloff=999
-
-" Off all bell
-set belloff=all
-set t_vb=
-
-" Gui settings
-" Also can configuration in $HOME/vimfiles/gvimrc
-"
-if has('gui_running')
-	" Setting GUI options
-	""""set guioptions+=b
-
-	" Setting window postition
-	winpos 40 40
-	" Setting inner content lines and columns
-	""""set lines=35 columns=140
-	set lines=999 columns=999
-
-	" Setting GUI font and size
-	set guifont=Maple_Mono_SC_NF:h12
-endif
