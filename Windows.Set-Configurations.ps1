@@ -7,7 +7,11 @@
 # Handle Windows's $HOME\.config
 ###############################################################################
 if ( $IsWindows ) {
-	if ( (Test-Path -Path "$HOME\.config\") -and !(Get-Item -Path "$HOME\.config\" | Select-Object -ExpandProperty LinkType) ) {
+	if ( `
+	(Test-Path -Path "$HOME\.config\") `
+	-and  `
+	!(Get-Item -Path "$HOME\.config\" | Select-Object -ExpandProperty LinkType) `
+	) {
 		Get-ChildItem -Path "$HOME\.config\" | `
 			Move-Item -Force -Destination "$HOME\AppData\Local\"
 		
@@ -17,10 +21,11 @@ if ( $IsWindows ) {
 		-Path "$HOME\.config" `
 		-Target "$HOME\AppData\Local\"
 	}
-	
-	New-Item -Force -ItemType SymbolicLink `
-	-Path "$HOME\.config" `
-	-Target "$HOME\AppData\Local\"
+	else {
+		New-Item -Force -ItemType SymbolicLink `
+		-Path "$HOME\.config" `
+		-Target "$HOME\AppData\Local\"
+	}
 }
 
 
@@ -61,6 +66,10 @@ Set-ConfigurationSymbolicLink -Config xdg-user-dirs
 Set-ConfigurationSymbolicLink -Config neoORvim -Name nvim
 
 Set-ConfigurationSymbolicLink -Config neoORvim -Name "..\vimfiles"
+Set-ConfigurationSymbolicLink -Config 'neoORvim\common.vimrc' -Name "..\common.vimrc"
+Set-ConfigurationSymbolicLink -Config 'bash\.bash_profile' -Name "..\.bash_profile"
+Set-ConfigurationSymbolicLink -Config 'bash\.bashrc' -Name "..\.bashrc"
+Set-ConfigurationSymbolicLink -Config 'bash\ep.bashrc' -Name "..\ep.bashrc"
 
 
 ###############################################################################
