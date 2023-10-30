@@ -45,12 +45,12 @@ function Set-ConfigurationSymbolicLink {
 	# 如果未填写名称
 	if ( ! $Name ) {
 		# 名称设置为配置文件名称
-		$Name = (Get-Item -Path $ConfigInRoot).Name
+		$Name = (Get-Item -Force -Path $ConfigInRoot).Name
 	}
 	
 	New-Item -Force -ItemType SymbolicLink `
 	-Path "$HOME\.config\$Name" `
-	-Target "$( (Get-Item -Path $ConfigInRoot).FullName )"
+	-Target "$( (Get-Item -Force -Path $ConfigInRoot).FullName )"
 }
 
 
@@ -65,6 +65,7 @@ Set-ConfigurationSymbolicLink -Config wezterm
 Set-ConfigurationSymbolicLink -Config xdg-user-dirs
 Set-ConfigurationSymbolicLink -Config neoORvim -Name nvim
 
+Set-ConfigurationSymbolicLink -Config neoORvim -Name "..\.vim"
 Set-ConfigurationSymbolicLink -Config neoORvim -Name "..\vimfiles"
 Set-ConfigurationSymbolicLink -Config 'neoORvim\common.vimrc' -Name "..\common.vimrc"
 Set-ConfigurationSymbolicLink -Config 'bash\.bash_profile' -Name "..\.bash_profile"
