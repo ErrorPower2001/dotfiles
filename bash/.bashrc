@@ -11,4 +11,4 @@ PS1='[\u@\h \W]\$ '
 
 
 # Source ep.bashrc
-[[ -f ~/ep.bashrc ]] && . ~/ep.bashrc
+[[ -f ~/epcommon.bashrc ]] && . ~/epcommon.bashrc

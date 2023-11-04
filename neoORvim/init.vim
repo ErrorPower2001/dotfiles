@@ -11,4 +11,4 @@
 " Source my common config vim script
 " 加载我的通用配置 vim script
 "=============================================================="
-source $HOME/common.vimrc
+source $HOME/epcommon.vimrc

@@ -20,7 +20,7 @@ RESET="\[$(tput sgr0)\]"
 # Prompt config
 #
 PS0="${ORANGE}==== Output ====${RESET}\n"
-PS1="\n\n${GREEN}[Host]${WHITE}\h${GREEN} [User]${WHITE}\u${GREEN} [Current]${WHITE}\W${GREEN}\n\$ ${RESET}"
+PS1="\n\n${GREEN}[Host]${WHITE}\h${GREEN} [User]${WHITE}\u${GREEN} [Current]${WHITE}\w${GREEN}\n\$ ${RESET}"
 
 
 # Alias

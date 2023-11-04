@@ -58,19 +58,22 @@ function Set-ConfigurationSymbolicLink {
 # Configuration
 ###############################################################################
 Set-ConfigurationSymbolicLink -Config alacritty
-Set-ConfigurationSymbolicLink -Config hypr
-Set-ConfigurationSymbolicLink -Config rio
-Set-ConfigurationSymbolicLink -Config waybar
 Set-ConfigurationSymbolicLink -Config wezterm
+Set-ConfigurationSymbolicLink -Config rio
+Set-ConfigurationSymbolicLink -Config hypr
+Set-ConfigurationSymbolicLink -Config waybar
 Set-ConfigurationSymbolicLink -Config xdg-user-dirs
-Set-ConfigurationSymbolicLink -Config neoORvim -Name nvim
 
-Set-ConfigurationSymbolicLink -Config neoORvim -Name "..\.vim"
-Set-ConfigurationSymbolicLink -Config neoORvim -Name "..\vimfiles"
-Set-ConfigurationSymbolicLink -Config 'neoORvim\common.vimrc' -Name "..\common.vimrc"
+if (! $IsWindows)
+{ Set-ConfigurationSymbolicLink -Config neoORvim -Name "..\.vim" }
+else
+{ Set-ConfigurationSymbolicLink -Config neoORvim -Name "..\vimfiles" }
+Set-ConfigurationSymbolicLink -Config neoORvim -Name nvim
+Set-ConfigurationSymbolicLink -Config 'neoORvim\epcommon.vimrc' -Name "..\epcommon.vimrc"
+
 Set-ConfigurationSymbolicLink -Config 'bash\.bash_profile' -Name "..\.bash_profile"
 Set-ConfigurationSymbolicLink -Config 'bash\.bashrc' -Name "..\.bashrc"
-Set-ConfigurationSymbolicLink -Config 'bash\ep.bashrc' -Name "..\ep.bashrc"
+Set-ConfigurationSymbolicLink -Config 'bash\epcommon.bashrc' -Name "..\epcommon.bashrc"
 
 
 ###############################################################################
