@@ -20,7 +20,14 @@ RESET="\[$(tput sgr0)\]"
 # Prompt config
 #
 PS0="${ORANGE}==== Output ====${RESET}\n"
-PS1="\n\n${GREEN}[Host]${WHITE}\h${GREEN} [User]${WHITE}\u${GREEN} [Current]${WHITE}\w${GREEN}\n\$ ${RESET}"
+
+PS1=''
+fill_line() {
+    printf -v PS1_fill_line '=%.0s' $(seq 1 $(tput cols))
+}
+PROMPT_COMMAND=fill_line
+PS1+='${PS1_fill_line}'
+PS1+="\n${GREEN}[Host]${WHITE}\h${GREEN} [User]${WHITE}\u${GREEN} [Current]${WHITE}\w${GREEN}\n\$ ${RESET}"
 
 
 # Alias

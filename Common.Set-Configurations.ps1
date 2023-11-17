@@ -62,7 +62,7 @@ Set-ConfigurationSymbolicLink -Config wezterm
 Set-ConfigurationSymbolicLink -Config rio
 Set-ConfigurationSymbolicLink -Config hypr
 Set-ConfigurationSymbolicLink -Config waybar
-Set-ConfigurationSymbolicLink -Config xdg-user-dirs
+####Set-ConfigurationSymbolicLink -Config xdg-user-dirs
 
 if (! $IsWindows)
 { Set-ConfigurationSymbolicLink -Config neoORvim -Name "..\.vim" }
@@ -74,6 +74,7 @@ Set-ConfigurationSymbolicLink -Config 'neoORvim\epcommon.vimrc' -Name "..\epcomm
 Set-ConfigurationSymbolicLink -Config 'bash\.bash_profile' -Name "..\.bash_profile"
 Set-ConfigurationSymbolicLink -Config 'bash\.bashrc' -Name "..\.bashrc"
 Set-ConfigurationSymbolicLink -Config 'bash\epcommon.bashrc' -Name "..\epcommon.bashrc"
+Set-ConfigurationSymbolicLink -Config 'mintty\.minttyrc' -Name "..\.minttyrc"
 
 
 ###############################################################################

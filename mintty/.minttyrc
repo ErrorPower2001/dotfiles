@@ -1,7 +1,7 @@
 Language=@
 Columns=128
 Rows=32
-ThemeFile=windows10
+ThemeFile=dracula
 Font=Maple Mono SC NF
 Locale=zh_CN
 Charset=UTF-8
