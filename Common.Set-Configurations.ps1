@@ -4,27 +4,34 @@
 
 
 ###############################################################################
-# Handle Windows's $HOME\.config
+# Handle Windows's $HOME\.config\
+# 配置 Windows 端的 $HOME\.config\
 ###############################################################################
 if ( $IsWindows ) {
 	if ( `
+	# 测试 $HOME\.config\ 存在
 	(Test-Path -Path "$HOME\.config\") `
 	-and  `
+	# $HOME\.config\ 不是软连接
 	!(Get-Item -Path "$HOME\.config\" | Select-Object -ExpandProperty LinkType) `
 	) {
+		# 移动 $HOME\.config\ 下的文件至 $HOME\AppData\Local\
 		Get-ChildItem -Path "$HOME\.config\" | `
 			Move-Item -Force -Destination "$HOME\AppData\Local\"
 		
+		# 删除文件夹 $HOME\.config\
 		Remove-Item -Force -Recurse -Path "$HOME\.config\"
 		
+		# 将 $HOME\AppData\Local\ 软链接到 $HOME\.config
 		New-Item -Force -ItemType SymbolicLink `
-		-Path "$HOME\.config" `
-		-Target "$HOME\AppData\Local\"
+		-Target "$HOME\AppData\Local\" `
+		-Path "$HOME\.config"
 	}
 	else {
+		# 重新创建软链接
 		New-Item -Force -ItemType SymbolicLink `
-		-Path "$HOME\.config" `
-		-Target "$HOME\AppData\Local\"
+		-Target "$HOME\AppData\Local\" `
+		-Path "$HOME\.config"
 	}
 }
 
