@@ -46,18 +46,30 @@ function Set-ConfigurationSymbolicLink {
 		[string]$Config,
 		[string]$Name
 	)
-
+	
+	# 配置文件的绝对路径
 	$ConfigInRoot = "$PSScriptRoot\$Config"
 	
 	# 如果未填写名称
 	if ( ! $Name ) {
 		# 名称设置为配置文件名称
 		$Name = (Get-Item -Force -Path $ConfigInRoot).Name
+		
+		# 由于没有具体路径，说明会配置到 $HOME\.config\ -> $HOME\AppData\Local\
+		# 介于一些 Windows 端的配置文件目录不在 %LOCALAPPDATA% 而是在
+		# %APPDATA% -> $HOME\AppData\Roaming\，将未填写名称的配置文件同时链接。
+		if ( $IsWindows ) {
+			# 将配置文件链接到 $HOME\AppData\Roaming\
+			New-Item -Force -ItemType SymbolicLink `
+			-Target "$( (Get-Item -Force -Path $ConfigInRoot).FullName )" `
+			-Path "$HOME\AppData\Roaming\$Name"
+		}
 	}
 	
+	# 将配置文件链接到 $HOME\.config\
 	New-Item -Force -ItemType SymbolicLink `
-	-Path "$HOME\.config\$Name" `
-	-Target "$( (Get-Item -Force -Path $ConfigInRoot).FullName )"
+	-Target "$( (Get-Item -Force -Path $ConfigInRoot).FullName )" `
+	-Path "$HOME\.config\$Name"
 }
 
 
