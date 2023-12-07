@@ -59,3 +59,19 @@ $Env:VIRTUAL_ENV_DISABLE_PROMPT = 1
 
 "`tImporting ErrorPowerCommonMdule" | Write-Host
 Import-Module $Env:OneDrive\Programs\PowerShell\Modules\ErrorPowerCommonModule.psm1
+
+
+"`tSetting Enter key transforms ~(tildes) to `$HOME" | Write-Host
+Set-PSReadlineKeyHandler -Key Enter -ScriptBlock {
+    try {
+        $line = $cursor = $null
+        [Microsoft.PowerShell.PSConsoleReadline]::GetBufferState([ref]$line, [ref]$cursor)
+        if($line -match '(?<= | ''| ")~(?=[\\/]?)') {
+            [Microsoft.PowerShell.PSConsoleReadline]::RevertLine()
+            [Microsoft.PowerShell.PSConsoleReadline]::Insert(($line -replace '(?<= | ''| ")~(?=[\\/]?)', $HOME))
+        }
+    }
+    finally {
+        [Microsoft.PowerShell.PSConsoleReadLine]::AcceptLine()
+    }
+}
