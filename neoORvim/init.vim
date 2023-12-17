@@ -42,6 +42,9 @@ if exists("g:neovide")
 	
 	" 禁用输入法，此时 Windows 端启动时默认英文状态
 	let g:neovide_input_ime = v:false
+	
+	" 禁用记住窗口
+	let g:neovide_remember_window_size = v:false
 endif
 
 
