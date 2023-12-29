@@ -91,6 +91,14 @@ set scrolloff=999
 set belloff=all
 set t_vb=
 
+" Auto switch input method in Windows
+" 自动切换 Windows 的输入法
+if has("Win32")
+	autocmd VimEnter * :silent !D:\\im-select\\im-select.exe 1033
+	autocmd VimLeave * :silent !D:\\im-select\\im-select.exe 2052
+	autocmd InsertEnter * :silent :!D:\\im-select\\im-select.exe 2052
+	autocmd InsertLeave * :silent :!D:\\im-select\\im-select.exe 1033
+endif
 
 "=============================================================="
 " packadd plugin
