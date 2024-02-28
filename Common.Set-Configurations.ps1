@@ -81,6 +81,7 @@ Set-ConfigurationSymbolicLink -Config wezterm
 Set-ConfigurationSymbolicLink -Config rio
 Set-ConfigurationSymbolicLink -Config hypr
 Set-ConfigurationSymbolicLink -Config waybar
+Set-ConfigurationSymbolicLink -Config kitty
 ####Set-ConfigurationSymbolicLink -Config xdg-user-dirs
 
 if (! $IsWindows)
