@@ -21,6 +21,9 @@ RESET="\[$(tput sgr0)\]"
 PS0+="${ORANGE}==== Output ====${RESET}"
 PS0+="\n"
 
+OriginalPS1=$PS1
+unset PS1
+
 execCommandWhenPrompt() {
 	terminal_columns=$(tput cols)
 	printf \
@@ -30,18 +33,16 @@ execCommandWhenPrompt() {
 }
 PROMPT_COMMAND=execCommandWhenPrompt
 
-OriginalPS1=$PS1
-unset PS1
-PS1+="${prompt_fill_line}"
+PS1+='${prompt_fill_line}'
 PS1+="\n"
 PS1+="${GREEN}[Host]${WHITE}\h"
-PS1+="\s"
+PS1+=" "
 PS1+="${GREEN}[User]${WHITE}\u"
-PS1+="\s"
+PS1+=" "
 PS1+="${GREEN}[Current]${WHITE}\w"
 PS1+="\n"
 PS1+="\$"
-PS1+="\s"
+PS1+=" "
 
 
 # Alias
