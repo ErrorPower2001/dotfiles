@@ -105,11 +105,11 @@ set t_vb=
 
 " Auto switch input method in Windows
 " 自动切换 Windows 的输入法
-if and( has("Win32"), filereadable("/home/pcx/Programs/im-select.exe") )
-	autocmd VimEnter * :silent :!/home/pcx/Programs/im-select.exe 1033
-	autocmd VimLeave * :silent :!/home/pcx/Programs/im-select.exe 2052
-	autocmd InsertEnter * :silent :!/home/pcx/Programs/im-select.exe 2052
-	autocmd InsertLeave * :silent :!/home/pcx/Programs/im-select.exe 1033
+if and( has("Win32"), filereadable("C:/home/pcx/Programs/im-select.exe") )
+	autocmd VimEnter * :silent :!C:/home/pcx/Programs/im-select.exe 2057
+	autocmd VimLeave * :silent :!C:/home/pcx/Programs/im-select.exe 2052
+	autocmd InsertEnter * :silent :!C:/home/pcx/Programs/im-select.exe 2052
+	autocmd InsertLeave * :silent :!C:/home/pcx/Programs/im-select.exe 2057
 endif
 
 "=============================================================="
