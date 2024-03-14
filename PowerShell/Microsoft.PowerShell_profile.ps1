@@ -54,6 +54,7 @@ function cd {
 "`tSetting user's shell variable" | Write-Host
 ####Set-Variable -Name 'Workstation' -Value 'C:\Users\PengChenxiang\OneDrive\Workstation' #'C:\Users\PengChenxiang\Workstation'
 Set-Variable -Name "EnableMyPrompt" -Value $true
+# Disabled Python venv prompt
 $Env:VIRTUAL_ENV_DISABLE_PROMPT = 1
 
 
@@ -61,6 +62,7 @@ $Env:VIRTUAL_ENV_DISABLE_PROMPT = 1
 Import-Module $Env:OneDrive\Programs\PowerShell\Modules\ErrorPowerCommonModule.psm1
 
 
+<#
 "`tSetting Enter key transforms ~(tildes) to `$HOME" | Write-Host
 Set-PSReadlineKeyHandler -Key Enter -ScriptBlock {
     try {
@@ -75,3 +77,4 @@ Set-PSReadlineKeyHandler -Key Enter -ScriptBlock {
         [Microsoft.PowerShell.PSConsoleReadLine]::AcceptLine()
     }
 }
+#>
