@@ -483,7 +483,7 @@ cursor:
 #  args:
 #    - --login
 shell:
-  program: 'C:/Program Files/PowerShell/7/pwsh'
+  program: 'pwsh.exe'
   args:
     - --login
 
