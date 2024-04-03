@@ -109,10 +109,13 @@ theme = "dracula"
 # background-opacity = 1.0
 # blur = false
 # decorations = "Enabled"
+#
+#window.mode = "Maximized"
+#
+window.mode = "Windowed"
 window.width = 1280
 window.height = 720
-#window.mode = "Maximized"
-window.mode = "Windowed"
+#
 window.blur = true
 
 # Renderer
@@ -280,6 +283,8 @@ navigation.clickable = true
 # [shell]
 # program = "/opt/homebrew/bin/tmux"
 # args = ["new-session", "-c", "/var/www"]
+shell.program = "pwsh"
+shell.args = ["-l"]
 
 # Colors
 #
