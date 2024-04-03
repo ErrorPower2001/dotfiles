@@ -8,3 +8,4 @@ Font=Maple Mono SC NF
 Locale=zh_CN
 Charset=UTF-8
 FontHeight=12
+Term=xterm-256color
