@@ -95,6 +95,7 @@ Set-ConfigurationSymbolicLink -Config 'bash\.bash_profile' -Name "..\.bash_profi
 Set-ConfigurationSymbolicLink -Config 'bash\.bashrc' -Name "..\.bashrc"
 Set-ConfigurationSymbolicLink -Config 'bash\epcommon.bashrc' -Name "..\epcommon.bashrc"
 Set-ConfigurationSymbolicLink -Config 'mintty\.minttyrc' -Name "..\.minttyrc"
+Set-ConfigurationSymbolicLink -Config 'inputrc' -Name '..\.inputrc'
 
 
 ###############################################################################
