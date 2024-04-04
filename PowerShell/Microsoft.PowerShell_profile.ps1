@@ -39,7 +39,12 @@ Register-ArgumentCompleter -Native -CommandName winget -ScriptBlock {
 "`tImporting scoop-completion module from buckets:extras/scoop-completion" | Write-Host
 # scoop-completion
 # enable completion in current shell
-Import-Module "$($(Get-Item $(Get-Command scoop.ps1).Path).Directory.Parent.FullName)\modules\scoop-completion"
+$scoop_root_path = (
+	Get-Item (
+		Get-Command scoop.ps1
+	).Path
+).Directory.Parent.FullName
+Import-Module "${scoop_root_path}\modules\scoop-completion"
 
 
 "`tImporting posh-git module" | Write-Host
