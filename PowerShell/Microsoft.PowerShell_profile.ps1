@@ -45,6 +45,7 @@ $scoop_root_path = (
 	).Path
 ).Directory.Parent.FullName
 Import-Module "${scoop_root_path}\modules\scoop-completion"
+Remove-Variable -Name $scoop_root_path
 
 
 "`tImporting posh-git module" | Write-Host
