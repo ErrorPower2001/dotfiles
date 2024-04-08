@@ -66,8 +66,8 @@ Import-Module posh-git
 
 
 "`tSetting cd with ls" | Write-Host
-Remove-Alias -Name cd
-function cd {
+# Remove-Alias -Name cd
+function cdls {
 	Set-Location -Path $args[0]
 	Get-ChildItem
 }
