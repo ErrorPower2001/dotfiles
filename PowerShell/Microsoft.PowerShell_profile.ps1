@@ -71,6 +71,33 @@ function cd {
 	Get-ChildItem
 }
 
+"`tSetting PSReadLine TAB key function" | Write-Host
+Set-PSReadlineKeyHandler -Key Tab -ScriptBlock {
+	try {
+		$line = $cursor = $null
+		[Microsoft.PowerShell.PSConsoleReadline]::GetBufferState([ref]$line, [ref]$cursor)
+		# Tilde replace to HOME
+		$home_tilde_match ='(?<=(^)|( )|( '')|( "))~(?=[\\/]?)'
+		if($line -match $home_tilde_match) {
+			[Microsoft.PowerShell.PSConsoleReadline]::RevertLine()
+			[Microsoft.PowerShell.PSConsoleReadline]::Insert(
+				($line -replace $home_tilde_match, $HOME)
+			)
+		}
+		# Emulate cygwin drive mount
+		$mount_match = '(?<=(^)|( )|( '')|( "))[\\/][a-z](?=[\\/]?)'
+		if($line -match $mount_match) {
+			[Microsoft.PowerShell.PSConsoleReadline]::RevertLine()
+			[Microsoft.PowerShell.PSConsoleReadline]::Insert(
+				($line -replace $mount_match, "$( $Matches[0].Remove(0,1).ToUpper() ):\")
+			)
+		}
+	}
+	finally {
+		[Microsoft.PowerShell.PSConsoleReadLine]::TabCompleteNext()
+	}
+}
+
 
 "`tSetting user's shell variable" | Write-Host
 #...Set-Variable -Name 'Workstation' -Value 'C:\Users\PengChenxiang\OneDrive\Workstation' #'C:\Users\PengChenxiang\Workstation'
