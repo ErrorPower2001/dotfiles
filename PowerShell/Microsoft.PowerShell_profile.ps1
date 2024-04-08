@@ -110,7 +110,11 @@ $Env:VIRTUAL_ENV_DISABLE_PROMPT = 1
 
 
 "`tImporting ErrorPowerCommonMdule" | Write-Host
-Import-Module $Env:OneDrive\Programs\PowerShell\Modules\ErrorPowerCommonModule.psm1
+$ep_common_module = $Env:OneDrive\Programs\PowerShell\Modules\ErrorPowerCommonModule.psm1
+if(Test-Path -Path $ep_common_module ) {
+	Import-Module $ep_common_module
+}
+Remove-Variable -Name ep_common_module
 
 
 <#
