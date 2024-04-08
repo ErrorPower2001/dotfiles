@@ -98,6 +98,10 @@ Set-PSReadlineKeyHandler -Key Tab -ScriptBlock {
 	}
 	finally {
 		[Microsoft.PowerShell.PSConsoleReadLine]::TabCompleteNext()
+		Remove-Variable -Name "line"
+		Remove-Variable -Name "cursor"
+		Remove-Variable -Name "home_tilde_match"
+		Remove-Variable -Name "mount_match"
 	}
 }
 
