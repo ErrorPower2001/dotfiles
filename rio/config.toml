@@ -116,6 +116,8 @@ window.mode = "Windowed"
 window.width = 1280
 window.height = 720
 #
+window.mode = "Maximized"
+#window.mode = "Windowed"
 window.blur = true
 
 # Renderer
