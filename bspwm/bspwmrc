@@ -29,7 +29,7 @@ pgrep -x picom \
 
 pgrep -x feh \
 	 > /dev/null || \
-	feh --bg-center $HOME/Pictures/SplashScreen.PNG
+	feh --bg-fill $HOME/Pictures/SplashScreen.PNG
 
 #...pgrep -x polybar \
 #...	 > /dev/null || \
