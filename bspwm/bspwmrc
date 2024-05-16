@@ -38,7 +38,9 @@ polybar
 
 #...pgrep -x fcitx5 \
 #...	 > /dev/null || \
-#...	fcitx5 -d --replace
-#fcitx5 -d --replace
+#...	fcitx5 -d --replace &
+#...fcitx5 -d --replace &
+#...fcitx5 &
 
-ibus-daemon -x -d
+#...ibus-daemon -x -d &
+#...ibus &
