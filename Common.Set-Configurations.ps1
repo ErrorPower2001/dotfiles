@@ -61,12 +61,20 @@ Set-ConfigurationSymbolicLink -Config waybar
 Set-ConfigurationSymbolicLink -Config kitty
 ####Set-ConfigurationSymbolicLink -Config xdg-user-dirs
 
-if (! $IsWindows)
-{ Set-ConfigurationSymbolicLink -Config neoORvim -Name "..\.vim" }
-else
-{ Set-ConfigurationSymbolicLink -Config neoORvim -Name "..\vimfiles" }
-Set-ConfigurationSymbolicLink -Config neoORvim -Name nvim
-Set-ConfigurationSymbolicLink -Config 'neoORvim\epcommon.vimrc' -Name "..\epcommon.vimrc"
+#...if (! $IsWindows)
+#...{ Set-ConfigurationSymbolicLink -Config neoORvim -Name "..\.vim" }
+#...else
+#...{ Set-ConfigurationSymbolicLink -Config neoORvim -Name "..\vimfiles" }
+#...Set-ConfigurationSymbolicLink -Config neoORvim -Name nvim
+#...Set-ConfigurationSymbolicLink -Config 'neoORvim\epcommon.vimrc' -Name "..\epcommon.vimrc"
+Set-ConfigurationSymbolicLink -Config "vim\epcommon.vimrc" -Name "..\epcommon.vimrc"
+#
+Set-ConfigurationSymbolicLink -Config "vim" -Name "..\.vim"
+Set-ConfigurationSymbolicLink -Config "vim\vimrc" -Name "..\.vimrc"
+Set-ConfigurationSymbolicLink -Config "vim" -Name "..\vimfiles"
+Set-ConfigurationSymbolicLink -Config "vim\vimrc" -Name "..\_vimrc"
+#
+Set-ConfigurationSymbolicLink -Config "vim" -Name "nvim"
 
 Set-ConfigurationSymbolicLink -Config 'bash\.bash_profile' -Name "..\.bash_profile"
 Set-ConfigurationSymbolicLink -Config 'bash\.bashrc' -Name "..\.bashrc"
