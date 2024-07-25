@@ -69,8 +69,10 @@ Set-ConfigurationSymbolicLink -Config kitty
 #...Set-ConfigurationSymbolicLink -Config 'neoORvim\epcommon.vimrc' -Name "..\epcommon.vimrc"
 Set-ConfigurationSymbolicLink -Config "vim\epcommon.vimrc" -Name "..\epcommon.vimrc"
 #
+# For Linux
 Set-ConfigurationSymbolicLink -Config "vim" -Name "..\.vim"
 Set-ConfigurationSymbolicLink -Config "vim\vimrc" -Name "..\.vimrc"
+# For Windows
 Set-ConfigurationSymbolicLink -Config "vim" -Name "..\vimfiles"
 Set-ConfigurationSymbolicLink -Config "vim\vimrc" -Name "..\_vimrc"
 #
