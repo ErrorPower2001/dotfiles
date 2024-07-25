@@ -3,6 +3,14 @@
 #
 
 
+#
+# History sizes
+#
+HISTSIZE=4096
+HISTFILESIZE=4096
+
+
+#
 # Color constant
 #
 BLACK="\[$(tput setaf 0)\]"
@@ -16,6 +24,7 @@ WHITE="\[$(tput setaf 7)\]"
 RESET="\[$(tput sgr0)\]"
 
 
+#
 # Prompt config
 #
 PS0+="${ORANGE}==== Output ====${RESET}"
@@ -25,11 +34,15 @@ OriginalPS1=$PS1
 unset PS1
 
 execCommandWhenPrompt() {
+	# Prompt = a line
 	terminal_columns=$(tput cols)
 	printf \
 		-v prompt_fill_line \
 		'=%.0s' \
 		$( seq 1 $terminal_columns )
+	
+	# Append history every command
+	history -a
 }
 PROMPT_COMMAND=execCommandWhenPrompt
 
@@ -45,6 +58,7 @@ PS1+="\$"
 PS1+=" "
 
 
+#
 # Alias
 #
 #...alias batx="awk '{print \$9}' | xargs bat"
@@ -66,6 +80,7 @@ bls() {
 unset bls
 
 
+#
 # Proxy configuration
 #
 #...export use_proxy=true
@@ -74,6 +89,8 @@ unset bls
 #...export all_proxy="socks5://127.0.0.1:7891"
 
 
+#
 # Menu complete
+#
 bind '"\t":menu-complete'
 bind '"\e[Z":menu-complete-backward'
