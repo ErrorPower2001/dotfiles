@@ -19,6 +19,8 @@ bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 
+
+
 #
 # pcx configuration
 #
@@ -45,10 +47,13 @@ pgrep -x fcitx5 \
 #...fcitx5 -d --replace &
 #...fcitx5 &
 
+#...pgrep -x ibus \
+#...	 > /dev/null || \
+#...	ibus-daemon -x -d &
 #...ibus-daemon -x -d &
 #...ibus &
 
-#...pgrep -x polybar \
-#...	 > /dev/null || \
-#...	polybar
-exec polybar
+pgrep -x polybar \
+	 > /dev/null || \
+	polybar
+#...exec polybar
