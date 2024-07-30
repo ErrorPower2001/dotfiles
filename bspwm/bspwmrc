@@ -22,8 +22,15 @@ bspc rule -a Screenkey manage=off
 #
 # pcx configuration
 #
+
+#
+# bspwm config
+#
 bspc config window_gap 8
 
+#
+# Startup
+#
 pgrep -x picom \
 	 > /dev/null || \
 	picom &
@@ -32,16 +39,16 @@ pgrep -x feh \
 	 > /dev/null || \
 	feh --bg-fill $HOME/Pictures/SplashScreen.PNG
 
-#...pgrep -x polybar \
-#...	 > /dev/null || \
-#...	polybar
-polybar
-
-#...pgrep -x fcitx5 \
-#...	 > /dev/null || \
-#...	fcitx5 -d --replace &
+pgrep -x fcitx5 \
+	 > /dev/null || \
+	fcitx5 -d --replace &
 #...fcitx5 -d --replace &
 #...fcitx5 &
 
 #...ibus-daemon -x -d &
 #...ibus &
+
+#...pgrep -x polybar \
+#...	 > /dev/null || \
+#...	polybar
+exec polybar
