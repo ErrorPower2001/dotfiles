@@ -2,7 +2,9 @@
 #
 # Configuration
 #
-editor = "nvim"
+editor.program = "nvim"
+editor.args = []
+
 cursor = "▇"
 blinking-cursor = true
 theme = "dracula"
