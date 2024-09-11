@@ -1,0 +1,39 @@
+# Rime custom schema: MSPY patch
+# Encoding: UTF-8
+# File format: UNIX
+
+# 以修补的方式修改输入方案
+patch:
+  # 设置 中文模式 为默认
+  #..."switches/@0/reset": 0
+  # 设置 英文模式 为默认
+  #..."switches/@0/reset": 1
+  # 设置 简体 为默认
+  #..."switches/@2/reset": 1
+
+  "speller/algebra/+":
+    # 模糊音设置
+    #    - erase/^xx$/
+    - derive/^z/v/  # z  => zh
+    - derive/^v/z/  # zh => z 
+
+    - derive/^c/i/  # c  => ch
+    - derive/^i/c/  # ch => c 
+
+    - derive/^s/u/  # s  => sh
+    - derive/^u/s/  # sh => s 
+
+    - derive/j$/h/  # an  => ang
+    - derive/h$/j/  # ang => an 
+
+    - derive/f$/g/  # en  => eng
+    - derive/g$/f/  # eng => en 
+
+    - derive/n$/;/  # in  => ing
+    - derive/;$/n/  # ing => in 
+
+    - derive/r$/d/  # uan  => uang
+    - derive/d$/r/  # uang => uan 
+
+    - derive/m$/d/  # ian  => iang
+    - derive/d$/m/  # iang => ian 
