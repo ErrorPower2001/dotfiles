@@ -77,6 +77,8 @@ Set-PSReadlineKeyHandler -Key Tab -ScriptBlock {
 	try {
 		$line = $cursor = $null
 		[Microsoft.PowerShell.PSConsoleReadline]::GetBufferState([ref]$line, [ref]$cursor)
+
+		<#
 		# Tilde replace to HOME
 		$home_tilde_match ='(?<=(^)|( )|( '')|( "))~(?=[\\/]?)'
 		# $home_tilde_match ='(?<=^| | ''| ")~(?=[\\/]?)'
@@ -87,6 +89,8 @@ Set-PSReadlineKeyHandler -Key Tab -ScriptBlock {
 			)
 			[Microsoft.PowerShell.PSConsoleReadLine]::SetCursorPosition($cursor)
 		}
+		#>
+
 		# Emulate cygwin drive mount
 		$mount_match = '(?<=(^)|( )|( '')|( "))[\\/][a-z](?=(([\\/])+)|( )|( '')|( "))'	# $Matches[6]
 		# $mount_match = '(?<=^| | ''| ")[\\/][a-z](?=[\\/]?)'				# $Matches[2]
