@@ -11,11 +11,13 @@ patch:
       ascii_mode: true
     mintty.exe:
       ascii_mode: true
-    rio.exe:
-      ascii_mode: true
     alacritty.exe:
       ascii_mode: true
+    rio.exe:
+      ascii_mode: true
     explorer.exe:
+      ascii_mode: true
+    gvim.exe:
       ascii_mode: true
   
   # >> 样式
