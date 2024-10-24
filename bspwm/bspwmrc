@@ -20,20 +20,27 @@ bspc rule -a Screenkey manage=off
 
 
 #
-# pcx configuration
+# > pcx configuration
 #
 
 #
-# bspwm monitor
+# > bspwm monitor
 #
-bspc monitor -d A B C D E
+if [[ $(cat /etc/hostname) == '' ]]; then
+	:
+elif [[ $(cat /etc/hostname) == 'surfacebook2arch' ]]; then
+	bspc monitor -d 1 2 3 4 5 6 7 8 9 0
+else
+	bspc monitor -d A B C D E
+fi
+
 #
-# bspwm config
+# > bspwm config
 #
 bspc config window_gap 8
 
 #
-# Startup
+# > Startup
 #
 pgrep -x picom \
 	 > /dev/null || \
@@ -59,3 +66,40 @@ pgrep -x polybar \
 	 > /dev/null || \
 	polybar &
 #...exec polybar
+
+#
+# > Rules
+#
+function getWidthInPercent {
+	echo -n \
+	$(( \
+		$(xrandr | grep '*' | \
+			awk {'print $1'} | \
+			awk -F"x" {'print $1'}) * $1 / 100 \
+	))
+}
+function getHeightInPercent {
+	echo -n \
+	$(( \
+		$(xrandr | grep '*' | \
+			awk {'print $1'} | \
+			awk -F"x" {'print $2'}) * $1 / 100 \
+	))
+}
+# Anythings
+bspc rule --add "*" \
+	state=floating \
+	center=on
+# kitty
+bspc rule --add "kitty" \
+	state=tiled
+# VLC
+#...bspc rule --add "vlc" \
+#...	state=tiled
+bspc rule --add "vlc" \
+	state=floating \
+	rectangle=$(getWidthInPercent 75)x$(getHeightInPercent 75)+0+0 \
+	center=on
+# Microsoft Edge
+bspc rule --add "Microsoft-edge" \
+	state=tiled
