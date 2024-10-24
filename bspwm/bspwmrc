@@ -20,7 +20,7 @@ bspc rule -a Screenkey manage=off
 
 
 #
-# > pcx configuration
+# >>> pcx configuration
 #
 
 #
@@ -53,12 +53,14 @@ pgrep -x feh \
 pgrep -x fcitx5 \
 	 > /dev/null || \
 	fcitx5 -d --replace &
+
 #...fcitx5 -d --replace &
 #...fcitx5 &
 
 #...pgrep -x ibus \
 #...	 > /dev/null || \
 #...	ibus-daemon -x -d &
+
 #...ibus-daemon -x -d &
 #...ibus &
 
@@ -74,32 +76,43 @@ function getWidthInPercent {
 	echo -n \
 	$(( \
 		$(xrandr | grep '*' | \
-			awk {'print $1'} | \
-			awk -F"x" {'print $1'}) * $1 / 100 \
+		awk {'print $1'} | \
+		awk -F"x" {'print $1'}) *$1 /100 \
 	))
 }
 function getHeightInPercent {
 	echo -n \
 	$(( \
 		$(xrandr | grep '*' | \
-			awk {'print $1'} | \
-			awk -F"x" {'print $2'}) * $1 / 100 \
+		awk {'print $1'} | \
+		awk -F"x" {'print $2'}) *$1 /100 \
 	))
 }
 # Anythings
 bspc rule --add "*" \
 	state=floating \
-	center=on
+	center=on \
+	#...desktop=any.\!occupied \
+	#...follow=on \
+	end=line
 # kitty
 bspc rule --add "kitty" \
-	state=tiled
+	state=tiled \
+	end=line
 # VLC
-#...bspc rule --add "vlc" \
-#...	state=tiled
 bspc rule --add "vlc" \
 	state=floating \
+	#...state=tiled \
 	rectangle=$(getWidthInPercent 75)x$(getHeightInPercent 75)+0+0 \
-	center=on
+	center=on \
+	end=line
 # Microsoft Edge
 bspc rule --add "Microsoft-edge" \
-	state=tiled
+	state=tiled \
+	end=line
+# java: Mindustry
+bspc rule --add "java:*:Mindustry" \
+	state=fullscreen \
+	desktop=any.\!occupied \
+	follow=on \
+	end=line
