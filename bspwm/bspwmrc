@@ -29,20 +29,32 @@ bspc rule -a Screenkey manage=off
 if [[ $(cat /etc/hostname) == '' ]]; then
 	:
 elif [[ $(cat /etc/hostname) == 'legion7arch' ]]; then
-	#>> Double monitor at home
-	#...bspc monitor HDMI-0 -d [1]EXM
-	#...bspc monitor DP-2 -d [2] [3] [4] [5] [6]
-	#>> Single monitor
-	# for NVIDIA
-	bspc monitor DP-2 -d 1 2 3 4 5 6 7 8 9 0
-	# for AMD
-	bspc monitor eDP-2 -d 1 2 3 4 5 6 7 8 9 0
 
-	xrandr \
-		--output DP-0 --off \
-		--output DP-1 --off \
-		--output HDMI-0 --mode 1920x1080 --pos 0x0 --rotate normal \
-		--output DP-2 --mode 1920x1080 --pos 1920x0 --rotate normal
+	if [[ 0 == 1 ]]; then
+		:
+
+	#>> Double monitor at home
+	elif [[ 0 == 1 ]]; then
+		bspc monitor HDMI-0 -d [1]EXM
+		bspc monitor DP-2 -d [2] [3] [4] [5] [6]
+		xrandr \
+			--output DP-0 --off \
+			--output DP-1 --off \
+			--output HDMI-0 --mode 1920x1080 --pos 0x0 --rotate normal \
+			--output DP-2 --mode 1920x1080 --pos 1920x0 --rotate normal
+
+	#>> Single monitor
+	elif [[ 0 == 1 ]]; then
+		# for NVIDIA
+		bspc monitor DP-1 -d 1 2 3 4 5 6 7 8 9 0
+	elif [[ 0 == 1 ]]; then
+		# for AMD
+		bspc monitor eDP-1 -d 1 2 3 4 5 6 7 8 9 0
+
+	else
+		# Default situation
+		bspc monitor -d 1 2 3 4 5 6 7 8 9 0
+	fi
 elif [[ $(cat /etc/hostname) == 'surfacebook2arch' ]]; then
 	bspc monitor -d 1 2 3 4 5 6 7 8 9 0
 else
