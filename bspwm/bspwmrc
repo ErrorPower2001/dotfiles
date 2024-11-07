@@ -143,3 +143,7 @@ bspc rule --add "java:*:Mindustry" \
 	desktop=any.\!occupied \
 	follow=on \
 	end=line
+bspc rule --add "thunderbird" \
+	state=tiled \
+	center=on \
+	end=line
