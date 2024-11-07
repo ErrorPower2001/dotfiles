@@ -14,8 +14,8 @@ font.italic.style = "Italic"
 font.normal.family = "Maple Mono SC NF"
 font.normal.style = "Regular"
 
-shell.program = "pwsh.exe"
-shell.args = ["--login"]
+terminal.shell.program = "pwsh.exe"
+terminal.shell.args = ["--login"]
 
 window.dimensions.columns = 128
 window.dimensions.lines = 32
