@@ -17,7 +17,7 @@ return {
 	--]]
 
 	-- Color Scheme
-	color_scheme = "Ocean",
+	color_scheme = "Apple System Color",
 
 	-- Tab Bar Appearance & Colors
 	use_fancy_tab_bar = true,
