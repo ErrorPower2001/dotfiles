@@ -99,6 +99,8 @@ pgrep -x polybar \
 	polybar &
 #...exec polybar
 
+systemctl --user start xsettingsd.service
+
 
 #
 # > Rules
