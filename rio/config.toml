@@ -5,9 +5,9 @@
 editor.program = "nvim"
 editor.args = []
 
-cursor = "▇"
+cursor.shape = "block"
 blinking-cursor = true
-theme = "dracula"
+#...theme = "dracula"
 env-vars = []
 
 #...window.width = 960
@@ -19,14 +19,14 @@ window.decorations = "Enabled"
 
 fonts.family = "Maple Mono SC NF"
 fonts.extras = []
-fonts.size = 20
+fonts.size = 16
 
 fonts.regular.family = "Maple Mono SC NF"
-fonts.regular.style = "Regular"
+fonts.regular.style = "Normal"
 fonts.regular.weight = 400
 
 fonts.bold.family = "Maple Mono SC NF"
-fonts.bold.style = "Bold"
+fonts.bold.style = "Normal"
 fonts.bold.weight = 800
 
 fonts.italic.family = "Maple Mono SC NF"
@@ -34,14 +34,14 @@ fonts.italic.style = "Italic"
 fonts.italic.weight = 400
 
 fonts.bold-italic.family = "Maple Mono SC NF"
-fonts.bold-italic.style = "BoldItalic"
+fonts.bold-italic.style = "Italic"
 fonts.bold-italic.weight = 800
 
 navigation.mode = "TopTab"
 navigation.clickable = true
 
 shell.program = "pwsh"
-shell.args = ["-l"]
+shell.args = ["-Login"]
 
 
 #>>>
