@@ -21,6 +21,10 @@ patch:
       ascii_mode: true
     mpv.exe:
       ascii_mode: true
+    ffplay.exe:
+      ascii_mode: true
+    wezterm-gui.exe:
+      ascii_mode: true
   
   # >> 样式
   style/+: # 合并式
