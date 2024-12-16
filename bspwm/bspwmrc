@@ -23,6 +23,7 @@ bspc rule -a Screenkey manage=off
 # >>> pcx configuration
 #
 
+
 #
 # > bspwm monitor
 #
@@ -61,10 +62,12 @@ else
 	bspc monitor -d A B C D E
 fi
 
+
 #
 # > bspwm config
 #
 bspc config window_gap 8
+
 
 #
 # > Startup
@@ -95,6 +98,7 @@ pgrep -x polybar \
 	 > /dev/null || \
 	polybar &
 #...exec polybar
+
 
 #
 # > Rules
