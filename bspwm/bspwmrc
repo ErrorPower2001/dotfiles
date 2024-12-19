@@ -78,7 +78,7 @@ pgrep -x picom \
 
 pgrep -x feh \
 	 > /dev/null || \
-	feh --bg-fill $HOME/Pictures/SplashScreen.PNG &
+	feh --bg-fill $HOME/.local/share/wallpaper.png &
 
 pgrep -x fcitx5 \
 	 > /dev/null || \
