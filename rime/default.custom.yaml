@@ -9,7 +9,7 @@ patch:
   # 输入法菜单
   menu/+:
     # 输入后选词数量
-    page_size: 7
+    page_size: 5
 
   # 方案选单切换
   switcher/hotkeys/=:
