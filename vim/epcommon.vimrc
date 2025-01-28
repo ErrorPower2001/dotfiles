@@ -134,6 +134,17 @@ packadd! matchit
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 " Declare the list of plugins.
 
+	" vim-lsp
+	Plug 'prabirshrestha/vim-lsp'
+	" vim-lsp-settings
+	Plug 'mattn/vim-lsp-settings'
+	" For auto-complete, need asynccomplete
+	Plug 'prabirshrestha/asyncomplete.vim'
+	Plug 'prabirshrestha/asyncomplete-lsp.vim'
+	" For snippets, HTML and CSS completion needed
+	Plug 'hrsh7th/vim-vsnip'
+	Plug 'hrsh7th/vim-vsnip-integ'
+
 	" neovim 官方 lsp 插件
 	"...Plug 'neovim/nvim-lspconfig'
 
