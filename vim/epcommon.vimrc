@@ -106,17 +106,18 @@ set t_vb=
 " Auto switch input method in Windows
 " 自动切换 Windows 的输入法
 if has("Win32")
-	if executable("WeaselAscii.cmd")
+	if 0
+	elseif executable("WeaselAscii.cmd")
 		autocmd VimEnter * :silent :!cmd /c WeaselAscii.cmd
 		autocmd InsertLeave * :silent :!cmd /c WeaselAscii.cmd
 	"...elseif filereadable(expand("C:/Program Files/Rime/*/WeaselServer.exe"))
 	"...	autocmd VimEnter * :silent :!cmd /c WeaselAscii.cmd
 	"...	autocmd InsertLeave * :silent :!cmd /c WeaselAscii.cmd
-	elseif filereadable("C:/Users/pcx/Programs/im-select.exe")
-		autocmd VimEnter * :silent :!C:/Users/pcx/Programs/im-select.exe 2057
-		autocmd VimLeave * :silent :!C:/Users/pcx/Programs/im-select.exe 2052
-		autocmd InsertEnter * :silent :!C:/Users/pcx/Programs/im-select.exe 2052
-		autocmd InsertLeave * :silent :!C:/Users/pcx/Programs/im-select.exe 2057
+	"...elseif filereadable("C:/Users/pcx/Programs/im-select.exe")
+	"...	autocmd VimEnter * :silent :!C:/Users/pcx/Programs/im-select.exe 2057
+	"...	autocmd VimLeave * :silent :!C:/Users/pcx/Programs/im-select.exe 2052
+	"...	autocmd InsertEnter * :silent :!C:/Users/pcx/Programs/im-select.exe 2052
+	"...	autocmd InsertLeave * :silent :!C:/Users/pcx/Programs/im-select.exe 2057
 	endif
 endif
 
