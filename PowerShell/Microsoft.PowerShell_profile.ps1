@@ -65,12 +65,14 @@ Import-Module posh-git
 #...Set-PSReadLineKeyHandler -Chord Tab -Function MenuComplete
 
 
+<#
 "`tSetting cd with ls" | Write-Host
 # Remove-Alias -Name cd
 function cdls {
 	Set-Location -Path $args[0]
 	Get-ChildItem
 }
+#>
 
 "`tSetting PSReadLine TAB key function" | Write-Host
 Set-PSReadlineKeyHandler -Key Tab -ScriptBlock {
