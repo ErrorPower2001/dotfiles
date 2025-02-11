@@ -74,6 +74,14 @@ function cdls {
 }
 #>
 
+"`tSource `$HOME/.config/pwsh.d/*" | Write-Host
+$script:pwsh_d_config = "$HOME/.config/pwsh.d/"
+if (Test-Path -Path $script:pwsh_d_config) {
+	Get-ChildItem -Path $script:pwsh_d_config | `
+		%{ . $_.FullName }
+}
+
+
 "`tSetting PSReadLine TAB key function" | Write-Host
 Set-PSReadlineKeyHandler -Key Tab -ScriptBlock {
 	try {
