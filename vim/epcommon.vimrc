@@ -218,9 +218,10 @@ let g:seoul256_background = 235
 "...set background=dark
 "...set background=light
 " Dark color scheme
-colo seoul256
+"...colo seoul256
 " Light color scheme
 "...colo seoul256-light
+colorscheme seoul256
 "}}}
 
 " pprovost/vim-ps1
