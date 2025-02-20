@@ -60,6 +60,7 @@ Set-ConfigurationSymbolicLink -Config hypr
 Set-ConfigurationSymbolicLink -Config waybar
 Set-ConfigurationSymbolicLink -Config kitty
 ####Set-ConfigurationSymbolicLink -Config xdg-user-dirs
+Set-ConfigurationSymbolicLink -Config pwsh
 
 #...if (! $IsWindows)
 #...{ Set-ConfigurationSymbolicLink -Config neoORvim -Name "..\.vim" }
