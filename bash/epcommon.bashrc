@@ -48,11 +48,11 @@ PROMPT_COMMAND=execCommandWhenPrompt
 
 PS1+='${prompt_fill_line}'
 PS1+="\n"
-PS1+="${GREEN}[Host]${WHITE}\h"
+PS1+="${GREEN}[Host]${RESET}\h"
 PS1+=" "
-PS1+="${GREEN}[User]${WHITE}\u"
+PS1+="${GREEN}[User]${RESET}\u"
 PS1+=" "
-PS1+="${GREEN}[Current]${WHITE}\w"
+PS1+="${GREEN}[Current]${RESET}\w"
 PS1+="\n"
 PS1+="\$"
 PS1+=" "
