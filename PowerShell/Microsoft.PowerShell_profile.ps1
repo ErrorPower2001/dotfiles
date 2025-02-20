@@ -1,7 +1,7 @@
 function Write-HostWithTime {
 	param([String]$Object, [switch]$NoNewline)
 	Write-Host -NoNewline -Object "`e[92m[$(Get-Date -Format "MM:hh:ss.ffff")]`e[0m"
-	if($NoNewline) {
+	if ($NoNewline) {
 		Write-Host -NoNewline -Object $Object
 	}
 	else {
@@ -10,6 +10,10 @@ function Write-HostWithTime {
 }
 
 Write-HostWithTime -Object "Start loading `$PROFILE.CurrentUserCurrentHost"
+
+
+Write-HostWithTime -Object "Dot sourcing more commands in `$HOME\.config\pwsh\"
+Get-ChildItem -Path $HOME\.config\pwsh\ | %{ . $_.FullName }
 
 
 Write-HostWithTime -Object "Setting input and output encoding to UTF-8"
@@ -23,9 +27,7 @@ Write-HostWithTime -Object "Importing scoop-completion module from scoop bucket:
 Import-Module "$((Get-Item (Get-Command scoop.ps1).Path).Directory.Parent.FullName)\modules\scoop-completion"
 
 
-Write-HostWithTime -Object "Importing posh-git module"
-Import-Module "$((Get-Module -ListAvailable -Name posh-git).Path)"
-
-
-Write-HostWithTime -Object "Dot sourcing more commands in `$HOME\.config\pwsh\"
-Get-ChildItem -Path $HOME\.config\pwsh\ | %{ . $_.FullName }
+if ($env:USE_POSHGIT -eq $true) {
+	Write-HostWithTime -Object "Importing posh-git module"
+	Import-Module "$((Get-Module -ListAvailable -Name posh-git).Path)"
+}
