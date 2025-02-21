@@ -13,7 +13,7 @@ Write-HostWithTime -Object "Start loading `$PROFILE.CurrentUserCurrentHost"
 
 
 Write-HostWithTime -Object "Dot sourcing more commands in `$HOME\.config\pwsh\"
-Get-ChildItem -Path $HOME\.config\pwsh\ | %{ . $_.FullName }
+Get-ChildItem -Path $HOME\.config\pwsh\ -Filter "*.ps1" | %{ . $_.FullName }
 
 
 Write-HostWithTime -Object "Copying default prompt function to DefaultPrompt"
