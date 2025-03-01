@@ -42,7 +42,9 @@ function prompt {
 		if( -not (Get-Module posh-git) ) {
 			Import-Module -Verbose "$((Get-Module -ListAvailable -Name posh-git).Path)"
 		}
-		$prompt += Write-VcsStatus
+		else {
+			$prompt += Write-VcsStatus
+		}
 	}
 
 
