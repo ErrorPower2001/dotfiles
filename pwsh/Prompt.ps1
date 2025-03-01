@@ -10,17 +10,20 @@ function prompt {
 		$output += "`e[0m"
 		return $output
 	}
+
 	$prompt = ""
 
-	$character = "`u{e0b0}"
 
-	$prompt += (trim_char -color 44 -char $character -reverse)
-	$prompt += "`e[37;44m"
+	$character = "`u{e0b0}"
+	$foreground = 37
+	$background = 44
+	$prompt += (trim_char -color $background -char $character -reverse)
+	$prompt += "`e[${foreground};${background}m"
 	$prompt += " "
 	$prompt += "pwsh"
 	$prompt += " "
 	$prompt += "`e[0m"
-	$prompt += (trim_char -color 44 -char $character)
+	$prompt += (trim_char -color $background -char $character)
 
 
 	#...$prompt += " "
@@ -31,8 +34,16 @@ function prompt {
 	$prompt += " "
 	$prompt += "$($ExecutionContext.SessionState.Path.CurrentLocation)"
 	$prompt += " "
-	$prompt += "`e[27m"
+	$prompt += "`e[0m"
 	$prompt += (trim_char -color 49 -char $character)
+
+
+	if( Test-Path -Path "${PWD}\.git") {
+		if( -not (Get-Module posh-git) ) {
+			Import-Module "$((Get-Module -ListAvailable -Name posh-git).Path)"
+		}
+		$prompt += Write-VcsStatus
+	}
 
 
 	$prompt += "`n"
