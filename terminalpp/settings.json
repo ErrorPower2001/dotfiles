@@ -13,10 +13,10 @@
 		"font" : {
 			/* Font to render default size characters
 			*/
-			"family" : "Maple Mono SC NF",
+			"family" : "Maple Mono NF CN",
 			/* Font to render double width characters
 			*/
-			"doubleWidthFamily" : "Maple Mono SC NF"
+			"doubleWidthFamily" : "Maple Mono NF CN"
 		}
 	},
 	"remoteFiles" : {

@@ -34,7 +34,7 @@ return {
 	--[[
 		Fonts
 	--]]
-	font = wezterm.font("Maple Mono SC NF"),
+	font = wezterm.font("Maple Mono NF CN"),
 	bold_brightens_ansi_colors = true,
 	font_size = 12.0,
 

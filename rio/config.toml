@@ -17,23 +17,23 @@ window.mode = "Maximized"
 window.blur = true
 window.decorations = "Enabled"
 
-fonts.family = "Maple Mono SC NF"
+fonts.family = "Maple Mono NF CN"
 fonts.extras = []
 fonts.size = 16
 
-fonts.regular.family = "Maple Mono SC NF"
+fonts.regular.family = "Maple Mono NF CN"
 fonts.regular.style = "Normal"
 fonts.regular.weight = 400
 
-fonts.bold.family = "Maple Mono SC NF"
+fonts.bold.family = "Maple Mono NF CN"
 fonts.bold.style = "Normal"
 fonts.bold.weight = 800
 
-fonts.italic.family = "Maple Mono SC NF"
+fonts.italic.family = "Maple Mono NF CN"
 fonts.italic.style = "Italic"
 fonts.italic.weight = 400
 
-fonts.bold-italic.family = "Maple Mono SC NF"
+fonts.bold-italic.family = "Maple Mono NF CN"
 fonts.bold-italic.style = "Italic"
 fonts.bold-italic.weight = 800
 
