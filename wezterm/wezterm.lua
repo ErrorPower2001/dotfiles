@@ -17,7 +17,7 @@ return {
 	--]]
 
 	-- Color Scheme
-	color_scheme = "Apple System Color",
+	color_scheme = "Campbell (Gogh)",
 
 	-- Tab Bar Appearance & Colors
 	use_fancy_tab_bar = true,
