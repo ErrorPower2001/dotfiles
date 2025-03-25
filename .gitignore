@@ -1,6 +1,6 @@
 .ssh/
-vim/plugged/
-alacritty/themes/
-alacritty/alacritty-theme/
-alacritty/alacritty-themes/
-wezterm/check_update
+HOME.VIM/plugged/
+CONFIG/alacritty/themes/
+CONFIG/alacritty/alacritty-theme/
+CONFIG/alacritty/alacritty-themes/
+CONFIG/wezterm/check_update

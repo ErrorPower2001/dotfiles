@@ -36,4 +36,4 @@ endif
 " Source my common config vim script
 " 加载我的通用配置 vim script
 "=============================================================="
-source $HOME/epcommon.vimrc
+source $HOME/.config/vimscript/000.vimrc

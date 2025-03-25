@@ -1,0 +1,99 @@
+customization:
+  distribution_code_name: Weasel
+  distribution_version: 0.15.0.0
+  generator: "Weasel::UIStyleSettings"
+  modified_time: "Tue Mar  5 15:56:37 2024"
+  rime_version: 1.8.5
+
+patch:
+  app_options/+:
+    WindowsTerminal.exe:
+      ascii_mode: true
+    mintty.exe:
+      ascii_mode: true
+    alacritty.exe:
+      ascii_mode: true
+    rio.exe:
+      ascii_mode: true
+    explorer.exe:
+      ascii_mode: true
+    gvim.exe:
+      ascii_mode: true
+    mpv.exe:
+      ascii_mode: true
+    ffplay.exe:
+      ascii_mode: true
+    wezterm-gui.exe:
+      ascii_mode: true
+  
+  # >> 样式
+  style/+: # 合并式
+    # >> 配色方案
+    #...color_scheme: aqua
+    #...color_scheme: win11light
+    #...color_scheme_dark: win11dark
+    # >> 字体
+    # 全局字号
+    font_point: 12
+    # 标签字号
+    label_font_point: 12
+    # 注释字号
+    comment_font_point: 12
+    # >> 窗口
+    # 水平: true
+    horizontal: true
+    # >> 预编辑区
+    # 行内显示预编辑区: true
+    inline_preedit: true
+    # >> 其他
+    # 候选标签字符格式: 数字
+    label_format: "%s"
+    # >> 布局
+    layout/=: # 覆盖式，也等于“layout:”
+      # 候选框最小宽度
+      #...min_width: 10
+      # 边框宽度
+      border_width: 2
+      # 主体元素 和 候选框的边距
+      #...margin_x: 16
+      margin_x: 16
+      #...margin_y: 8
+      margin_y: 8
+      # 候选项 之间的间距
+      candidate_spacing: 22
+      # 候选项 与 候选标签/注解文字 之间的间距
+      hilite_spacing: 6
+      # 候选项高亮区域 左右、上下 与 内部文字 的间距
+      #...hilite_padding_x: 8
+      hilite_padding_x: 12 # 16 - 4
+      #...hilite_padding_y: 2
+      hilite_padding_y: 4 # 8 - 4
+      # 阴影区域 半径
+      shadow_radius: 8
+      # 候选窗口 圆角半径
+      corner_radius: 8
+      # 候选背景色块 圆角半径
+      round_corner: 5
+  
+  # https://github.com/rime/weasel/wiki/%E7%A4%BA%E4%BE%8B#windows-11-%E9%A3%8E%E6%A0%BC
+  preset_color_schemes/+:
+    win11light:
+      name: " Win11浅色 / Win11light"
+      text_color: 0x191919
+      label_color: 0x191919
+      hilited_label_color: 0x191919
+      back_color: 0xf9f9f9
+      border_color: 0x009e5a00
+      hilited_mark_color: 0xc06700
+      hilited_candidate_back_color: 0xd0d0d0
+      #...shadow_color: 0x20000000
+    win11dark:
+      name: "Win11暗色 / Win11Dark"
+      text_color: 0xf9f9f9
+      label_color: 0xf9f9f9
+      back_color: 0x2C2C2C
+      hilited_label_color: 0xf9f9f9
+      border_color: 0x002C2C2C
+      hilited_mark_color: 0xFFC24C
+      hilited_candidate_back_color: 0x383838
+      #...shadow_color: 0x20000000
