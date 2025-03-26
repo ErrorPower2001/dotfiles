@@ -10,5 +10,10 @@ alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
 
 
-# Source ep.bashrc
-[[ -f ~/.config/bash/000.bashrc ]] && . ~/.config/bash/000.bashrc
+# Source *.bashrc
+for shfile in $(echo ~/.config/bash/*.bashrc);
+do
+	[[ -e "${shfile}" ]] && \
+		echo "Source ${shfile}" && \
+		source "${shfile}" ;
+done
