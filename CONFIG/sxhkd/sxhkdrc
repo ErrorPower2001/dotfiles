@@ -130,5 +130,7 @@ super + {Left,Down,Up,Right}
 super + r
 	rofi -show run
 
+#...XF86MonBrightness{Up,Down}
+#...	brightnessctl set 10%{+,-}
 XF86MonBrightness{Up,Down}
-	brightnessctl set 10%{+,-}
+	light -{A,U} 10
