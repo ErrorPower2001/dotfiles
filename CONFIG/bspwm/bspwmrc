@@ -123,7 +123,7 @@ function getHeightInPercent {
 }
 # Anythings
 bspc rule --add "*" \
-	state=floating \
+	state=pseudo_tiled \
 	center=on \
 	#...desktop=any.\!occupied \
 	#...follow=on \
@@ -151,5 +151,9 @@ bspc rule --add "java:*:Mindustry" \
 	end=line
 bspc rule --add "thunderbird" \
 	state=tiled \
+	center=on \
+	end=line
+bspc rule --add "Clash-nyanpasu" \
+	state=floating \
 	center=on \
 	end=line
