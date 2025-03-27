@@ -7,7 +7,7 @@ if( -not (Test-Path -Path "${CONFIG_PATH}") ) {
 }
 
 # 将 HOME/ 下的所有 文件/文件夹 链接到 $HOME/
-Get-ChildItem -Path "${PSScriptRoot}\HOME\" | %{
+Get-ChildItem -Force -Path "${PSScriptRoot}\HOME\" | %{
 	New-Item -Force `
 		-ItemType SymbolicLink `
 		-Target $_.FullName `
@@ -15,7 +15,7 @@ Get-ChildItem -Path "${PSScriptRoot}\HOME\" | %{
 }
 
 # 将 CONFIG/ 下的所有 文件/文件夹 链接到 $HOME/.config/
-Get-ChildItem -Path "${PSScriptRoot}\CONFIG\" | %{
+Get-ChildItem -Force -Path "${PSScriptRoot}\CONFIG\" | %{
 	New-Item -Force `
 		-ItemType SymbolicLink `
 		-Target $_.FullName `
@@ -55,7 +55,7 @@ if( $IsWindows ) {
 	-Path $PROFILE.CurrentUserCurrentHost
 
 	# 将所有 $HOME/.config/ 下的 文件/文件夹 链接到 $HOME/AppData/*/
-	Get-ChildItem -Path $HOME\.config\ | %{
+	Get-ChildItem -Force -Path $HOME\.config\ | %{
 		foreach( $i in ('Local', 'LocalLow', 'Roaming') ) {
 			New-Item -Force `
 				-ItemType SymbolicLink `
