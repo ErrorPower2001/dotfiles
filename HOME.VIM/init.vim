@@ -32,19 +32,19 @@ if exists("g:neovide")
 	""""set lines=999 columns=999
 	
 	" Setting GUI font and size
-	set guifont=Maple_Mono_SC_NF:h12
+	set guifont=Maple_Mono_NF_CN:h12
 	
 	" Padding
 	let g:neovide_padding_top = 8
-	let g:neovide_padding_bottom = 0
-	let g:neovide_padding_right = 4
+	let g:neovide_padding_bottom = 8
+	let g:neovide_padding_right = 8
 	let g:neovide_padding_left = 8
 	
 	" 禁用输入法，此时 Windows 端启动时默认英文状态
 	let g:neovide_input_ime = v:false
 	
 	" 禁用记住窗口
-	let g:neovide_remember_window_size = v:false
+	let g:neovide_remember_window_size = v:true
 endif
 
 

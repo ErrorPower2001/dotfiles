@@ -28,7 +28,7 @@ if has('gui_running')
 	""""set lines=999 columns=999
 
 	" Setting GUI font and size
-	set guifont=Maple_Mono_SC_NF:h12
+	set guifont=Maple_Mono_NF_CN:h12
 endif
 
 
