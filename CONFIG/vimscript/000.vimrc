@@ -70,7 +70,7 @@ set nosplitbelow
 set splitright
 
 " 设置空格、制表符等隐藏字符样式
-set listchars=eol:↵,tab:\|->,multispace:\|···,trail:-,nbsp:+
+set listchars=eol:󰌑,tab:\|->,multispace:\|···,trail:-,nbsp:+
 "...set listchars=tab:\|->,multispace:\|···,trail:-,nbsp:+
 " 空格与制表符，隐藏字符显示
 set list
