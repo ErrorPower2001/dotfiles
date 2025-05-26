@@ -201,6 +201,8 @@ call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 	"...	\ 'do': 'powershell -executionpolicy bypass -File install.ps1',
 	"...	\ }
 
+	Plug 'voldikss/vim-floaterm'
+
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
