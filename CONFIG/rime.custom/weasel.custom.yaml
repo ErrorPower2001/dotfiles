@@ -19,6 +19,7 @@ patch:
       ascii_mode: true
     gvim.exe:
       ascii_mode: true
+      vim_mode: true
     mpv.exe:
       ascii_mode: true
     ffplay.exe:
