@@ -1,1 +1,5 @@
-Function mpv { mpv.com --screenshot-format=png --keep-open=yes $args }
+if($IsWindows) {
+	Function mpv {
+		mpv.com --screenshot-format=png --keep-open=yes $args
+	}
+}
