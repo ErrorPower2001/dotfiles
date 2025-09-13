@@ -53,3 +53,6 @@ endif
 " 加载我的通用配置 vim script
 "=============================================================="
 source $HOME/.config/vimscript/000.vimrc
+if filereadable(stdpath("config")."/lua/init.lua")
+	lua require("init")
+endif
