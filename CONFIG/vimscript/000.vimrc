@@ -138,7 +138,7 @@ packadd! matchit
 " Plugins will be downloaded under the specified directory.
 " vim-plug 插件设置
 "=============================================================="
-call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
+call plug#begin(has('nvim') ? stdpath('data').'/plugged' : '~/.vim/plugged')
 " Declare the list of plugins.
 
 	" For auto-complete, need async.vim
