@@ -141,6 +141,9 @@ packadd! matchit
 call plug#begin(has('nvim') ? stdpath('data').'/plugged' : '~/.vim/plugged')
 " Declare the list of plugins.
 
+	" Vim CN doc
+	Plug 'yianwillis/vimcdoc'
+
 	" For auto-complete, need async.vim
 	" async.vim
 	Plug 'prabirshrestha/async.vim'
