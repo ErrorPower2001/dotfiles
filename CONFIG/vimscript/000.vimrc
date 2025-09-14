@@ -141,13 +141,19 @@ packadd! matchit
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 " Declare the list of plugins.
 
+	" For auto-complete, need async.vim
+	" async.vim
+	Plug 'prabirshrestha/async.vim'
+	" asyncomplete.vim
+	Plug 'prabirshrestha/asyncomplete.vim'
+	" asyncomplete-lsp.vim
+	Plug 'prabirshrestha/asyncomplete-lsp.vim'
+
 	" vim-lsp
 	Plug 'prabirshrestha/vim-lsp'
 	" vim-lsp-settings
 	Plug 'mattn/vim-lsp-settings'
-	" For auto-complete, need asynccomplete
-	Plug 'prabirshrestha/asyncomplete.vim'
-	Plug 'prabirshrestha/asyncomplete-lsp.vim'
+
 	" For snippets, HTML and CSS completion needed
 	Plug 'hrsh7th/vim-vsnip'
 	Plug 'hrsh7th/vim-vsnip-integ'
