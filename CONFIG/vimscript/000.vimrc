@@ -110,7 +110,7 @@ augroup LinesStayCenter
 	\		'topline': max(
 	\			[
 	\				1,
-	\				line('.') - float2nr( winheight(0)/2 - 1 )
+	\				(line(".")-winheight(0)/2)+(1-winheight(0)%2)
 	\			]
 	\		)
 	\	}
