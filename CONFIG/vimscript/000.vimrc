@@ -101,50 +101,20 @@ language C
 "...let s:center_lines = 4
 "...let &scrolloff = (winheight(0) - s:center_lines)/2
 
-let s:last_line = 1
 augroup LinesStayCenter
 	autocmd!
 
-	if v:false
-		autocmd CursorMoved *
-			\ let current_line = line('.')
-			\ | if current_line != s:last_line
-				\ | execute('normal! zz')
-			\ | endif
-			\ | let s:last_line = current_line
-	endif
-
-	if v:false
-		autocmd CursorMovedI *
-			\ let current_line = line('.')
-			\ | if current_line != s:last_line
-				\ | call feedkeys("\<C-\>\<C-o>zz", 'n')
-			\ | endif
-			\ | let s:last_line = current_line
-	endif
-
-	if v:false
-		autocmd InsertEnter *
-			\ | let i_scrolloff = &scrolloff
-			\ | set scrolloff=999
-		autocmd InsertLeave *
-			\ | let &scrolloff = i_scrolloff
-			\ | execute 'normal! zz'
-	endif
-
-	if v:true
-		autocmd CursorMoved,CursorMovedI *
-		\ call winrestview(
-		\	{
-		\		'topline': max(
-		\			[
-		\				1,
-		\				line('.') - float2nr( winheight(0)/2 - 1 )
-		\			]
-		\		)
-		\	}
-		\)
-	endif
+	autocmd CursorMoved,CursorMovedI *
+	\ call winrestview(
+	\	{
+	\		'topline': max(
+	\			[
+	\				1,
+	\				line('.') - float2nr( winheight(0)/2 - 1 )
+	\			]
+	\		)
+	\	}
+	\)
 augroup END
 
 noremap <ScrollWheelDown>      3<Down>
