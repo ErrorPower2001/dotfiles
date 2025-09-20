@@ -102,12 +102,60 @@ language C
 "...let &scrolloff = (winheight(0) - s:center_lines)/2
 
 let s:last_line = 1
-autocmd CursorMoved,CursorMovedI *
-	\ let current_line = line('.')
-	\ | if current_line != s:last_line
-		\ | execute 'normal! zz'
-	\ | endif
-	\ | let s:last_line = current_line
+augroup LinesStayCenter
+	autocmd!
+
+	if v:false
+		autocmd CursorMoved *
+			\ let current_line = line('.')
+			\ | if current_line != s:last_line
+				\ | execute('normal! zz')
+			\ | endif
+			\ | let s:last_line = current_line
+	endif
+
+	if v:false
+		autocmd CursorMovedI *
+			\ let current_line = line('.')
+			\ | if current_line != s:last_line
+				\ | call feedkeys("\<C-\>\<C-o>zz", 'n')
+			\ | endif
+			\ | let s:last_line = current_line
+	endif
+
+	if v:false
+		autocmd InsertEnter *
+			\ | let i_scrolloff = &scrolloff
+			\ | set scrolloff=999
+		autocmd InsertLeave *
+			\ | let &scrolloff = i_scrolloff
+			\ | execute 'normal! zz'
+	endif
+
+	if v:true
+		autocmd CursorMoved,CursorMovedI *
+		\ call winrestview(
+		\	{
+		\		'topline': max(
+		\			[
+		\				1,
+		\				line('.') - float2nr( winheight(0)/2 - 1 )
+		\			]
+		\		)
+		\	}
+		\)
+	endif
+augroup END
+
+noremap <ScrollWheelDown>      3<Down>
+noremap <ScrollWheelUp>        3<Up>
+noremap <S-ScrollWheelDown>    <ScrollWheelRight>
+noremap <S-ScrollWheelUp>      <ScrollWheelLeft>
+
+inoremap <ScrollWheelDown>      <Down><Down><Down>
+inoremap <ScrollWheelUp>        <Up><Up><Up>
+inoremap <S-ScrollWheelDown>    <ScrollWheelRight>
+inoremap <S-ScrollWheelUp>      <ScrollWheelLeft>
 
 " Off all bell
 " 关闭提示音
