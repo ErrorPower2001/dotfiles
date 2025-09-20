@@ -98,15 +98,9 @@ language C
 " 滚动偏移行数
 "...set scrolloff=999
 
-"...let s:last_line = 1
-"...function! s:do_normal_zz_on_vertical_move()
-"...	let current_line = line(".")
-"...	if current_line != s:last_line
-"...		normal! zz
-"...	endif
-"...	let s:last_line = current_line
-"...endfunction
-"...autocmd	CursorMoved,CursorMovedI	*	call s:do_normal_zz_on_vertical_move()
+"...let s:center_lines = 4
+"...let &scrolloff = (winheight(0) - s:center_lines)/2
+
 let s:last_line = 1
 autocmd CursorMoved,CursorMovedI *
 	\ let current_line = line('.')
