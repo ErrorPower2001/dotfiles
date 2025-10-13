@@ -49,7 +49,7 @@ return {
 	--]]
 	initial_cols = 120,
 	initial_rows = 30,
-	window_decorations = "RESIZE",
+	window_decorations = "INTEGRATED_BUTTONS|RESIZE",
 	window_padding = {
 		left = v_padding,
 		right = v_padding,
