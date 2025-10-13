@@ -12,16 +12,16 @@ PS0+="\e[0m"
 PS0+="\n"
 
 
-FUNC_PROMPT_COMMAND() {
+FUNC_PROMPT() {
 	# Fill "=" a line
 	#... >>>printf -v fill_line_prompt \
 	#... >>>	'=%.0s' $(seq 1 $COLUMNS)
 	printf '=%.0s' $(seq 1 $COLUMNS)
 
 	# Append history every command
-	history -a
+	history -a; history -c; history -r
 }
-PROMPT_COMMAND=FUNC_PROMPT_COMMAND
+PROMPT_COMMAND=FUNC_PROMPT
 
 unset PS1
 PS1=""
