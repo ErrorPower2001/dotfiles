@@ -1,12 +1,30 @@
 set bell-style none
 
-set editing-mode vi
-set show-mode-in-prompt on
 
 set completion-ignore-case on
+set show-all-if-ambiguous on
 
+
+set emacs-mode-string (emacs)
+set vi-ins-mode-string (vi:ins)
+set vi-cmd-mode-string (vi:cmd)
+set show-mode-in-prompt on
+
+
+set editing-mode vi
+
+# Arrow Up
 "\e[A": history-search-backward
+# Arrow Down
 "\e[B": history-search-forward
 
+# Tab
 "\t": menu-complete
+# Shift Tab
 "\e[Z": menu-complete-backward
+
+# Ctrl N
+"\C-N": possible-completions
+
+# Ctrl Backspace
+"\C-\b": backward-kill-word
