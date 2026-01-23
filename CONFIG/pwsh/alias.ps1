@@ -13,7 +13,8 @@ if($IsWindows) {
 		code.cmd --disable-workspace-trust $args;
 	}
 
-	if ( Test-Path -Path "$HOME\scoop\apps\uutils-coreutils-lean\current\coreutils.exe" ) {
+	#...if ( Test-Path -Path "$HOME\scoop\apps\uutils-coreutils-lean\current\coreutils.exe" ) {
+	if (Get-Command -ErrorAction SilentlyContinue -Name "uutils.exe") {
 		Remove-Alias -Name rm;
 		Function rm {
 			& "$HOME\scoop\apps\uutils-coreutils-lean\current\coreutils.exe" `
