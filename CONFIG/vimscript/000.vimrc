@@ -94,6 +94,11 @@ language C
 " 光标无样式（跟随 Terminal）
 "...set guicursor=
 
+" Set Undo File
+" 设置重做缓存
+set undofile
+let &undodir = (has('nvim') ? stdpath('config').'/undodir' : fnamemodify($MYVIMDIR,':h').'/undodir')
+
 " Scrolloffset Lines
 " 滚动偏移行数
 "...set scrolloff=999

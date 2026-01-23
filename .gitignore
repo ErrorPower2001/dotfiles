@@ -1,5 +1,6 @@
 .ssh/
 HOME.VIM/plugged/
+HOME.VIM/undodir/
 CONFIG/alacritty/themes/
 CONFIG/alacritty/alacritty-theme/
 CONFIG/alacritty/alacritty-themes/
