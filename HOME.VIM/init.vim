@@ -52,7 +52,12 @@ endif
 " Source my common config vim script
 " 加载我的通用配置 vim script
 "=============================================================="
-source $HOME/.config/vimscript/000.vimrc
+let s:configs_dir = ($HOME . '/.config/vimscript/')
+if isdirectory(s:configs_dir)
+	for s:file in glob(s:configs_dir . '/*.{vim,vimrc}', 0, 1)
+		execute 'source'.' '.fnameescape(s:file)
+	endfor
+endif
 if filereadable(stdpath("config")."/lua/init.lua")
 	lua require("init")
 endif
