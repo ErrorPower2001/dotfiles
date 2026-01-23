@@ -32,7 +32,7 @@ if exists("g:neovide")
 	""""set lines=999 columns=999
 	
 	" Setting GUI font and size
-	set guifont=Maple_Mono_NF_CN:h12
+	set guifont=IosevkaTerm_NFM:h12
 	
 	" Padding
 	let g:neovide_padding_top = 8

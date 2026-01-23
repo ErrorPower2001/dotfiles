@@ -1,11 +1,14 @@
 Language=@
+Locale=zh_CN
+Charset=UTF-8
+
 X=30
 Y=30
 Columns=128
 Rows=32
-Font=Maple Mono NF CN
-Locale=zh_CN
-Charset=UTF-8
+
+Font=IosevkaTerm NFM
 FontHeight=12
+
 Term=xterm-256color
 ThemeFile=windows10

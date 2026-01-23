@@ -34,7 +34,8 @@ return {
 	--[[
 		Fonts
 	--]]
-	font = wezterm.font("Maple Mono NF CN"),
+	-- font = wezterm.font("Maple Mono NF CN"),
+	font = wezterm.font("IosevkaTerm Nerd Font Mono"),
 	bold_brightens_ansi_colors = true,
 	font_size = 12.0,
 
@@ -47,8 +48,8 @@ return {
 	--[[
 		ALL
 	--]]
-	initial_cols = 120,
-	initial_rows = 30,
+	initial_cols = 128,
+	initial_rows = 32,
 	window_decorations = "INTEGRATED_BUTTONS|RESIZE",
 	window_padding = {
 		left = v_padding,
