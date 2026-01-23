@@ -21,4 +21,9 @@ if($IsWindows) {
 				rm $args;
 		}
 	}
+	if (Get-Command -ErrorAction SilentlyContinue -Name "gsudo.exe") {
+		Function sudo {
+			gsudo.exe $args
+		}
+	}
 }
