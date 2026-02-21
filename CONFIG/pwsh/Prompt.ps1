@@ -1,3 +1,7 @@
+Write-HostWithTime -Object "Copying default prompt function to DefaultPrompt"
+$Function:DefaultPrompt = $Function:prompt
+
+
 function prompt {
 	function trim_char ($color, $char, [switch]$reverse) {
 		$output = ""

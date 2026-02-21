@@ -16,10 +16,6 @@ Write-HostWithTime -Object "Dot sourcing more commands in `$HOME\.config\pwsh\"
 Get-ChildItem -Path $HOME\.config\pwsh\ -Filter "*.ps1" | %{ . $_.FullName }
 
 
-Write-HostWithTime -Object "Copying default prompt function to DefaultPrompt"
-$Function:DefaultPrompt = $Function:prompt
-
-
 Write-HostWithTime -Object "Setting input and output encoding to UTF-8"
 $OutputEncoding = `
 [System.Console]::InputEncoding = `
