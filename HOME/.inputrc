@@ -18,18 +18,18 @@ set editing-mode vi
 # Arrow Down
 "\e[B": history-search-forward
 
-# Tab
-"\t": menu-complete
-# Shift Tab
-"\e[Z": menu-complete-backward
-
-# Ctrl N
-"\C-N": possible-completions
-
-# Ctrl Backspace
-"\C-\b": backward-kill-word
-
 $if keymap == vi-insert
+	# Tab
+	"\t": menu-complete
+	# Shift Tab
+	"\e[Z": menu-complete-backward
+
+	# Ctrl N
+	"\C-N": possible-completions
+
+	# Ctrl Backspace
+	"\C-\b": backward-kill-word
+
 	# Ctrl L
 	"\C-L": clear-screen
 $endif
