@@ -1,3 +1,4 @@
+Write-HostWithTime -Object "Function for Yazi shell wrapper: yaziw"
 function yaziw {
 	$tmp = [System.IO.Path]::GetTempFileName()
 	yazi $args --cwd-file="$tmp"

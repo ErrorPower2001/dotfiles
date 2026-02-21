@@ -1,3 +1,4 @@
+Write-HostWithTime -Object "Setting new variable PSLastObject to record"
 New-Variable -Name PSLastObject
 function Out-Default {
 	$input | Tee-Object -Variable Global:PSLastObject |
