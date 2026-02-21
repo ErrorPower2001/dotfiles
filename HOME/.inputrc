@@ -28,3 +28,8 @@ set editing-mode vi
 
 # Ctrl Backspace
 "\C-\b": backward-kill-word
+
+$if keymap == vi-insert
+	# Ctrl L
+	"\C-L": clear-screen
+$endif
