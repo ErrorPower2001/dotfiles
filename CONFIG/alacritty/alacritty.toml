@@ -29,3 +29,5 @@ window.padding.y = 8
 
 window.position.x = 30
 window.position.y = 30
+
+keyboard.bindings = [{key = "Backspace", mods = "Control", chars = "\u0017"}]
