@@ -263,6 +263,9 @@ let g:seoul256_background = 235
 " Light color scheme
 "...colo seoul256-light
 colorscheme seoul256
+
+highlight StatusLine   gui=reverse,bold
+highlight StatusLineNC gui=reverse
 "}}}
 
 " pprovost/vim-ps1
