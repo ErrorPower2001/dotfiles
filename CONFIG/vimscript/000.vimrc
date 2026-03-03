@@ -85,6 +85,10 @@ set shiftwidth=4
 " 设置不使用制表符而只使用空格进行缩进
 " set expandtab
 
+" 单词列表，改变 cmdline-completion 的行为
+" A list of words that change how cmdline-completion is done.
+set wildoptions=pum,tagfile
+
 " Set language to chinese
 " 设置 vim 语言
 "...language chinese_china
