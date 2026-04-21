@@ -33,3 +33,8 @@ $if keymap == vi-insert
 	# Ctrl L
 	"\C-L": clear-screen
 $endif
+
+$if clink
+	"\C-H": backward-delete-char
+	"\C-?": backward-kill-word
+$endif
