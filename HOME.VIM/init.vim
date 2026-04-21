@@ -26,7 +26,7 @@ if exists("g:neovide")
 	""""winpos 40 40
 	" Setting inner content lines and columns
 	""""set lines=35 columns=140
-	set lines=32 columns=120
+	set lines=40 columns=160
 	
 	" Setting Max window
 	""""set lines=999 columns=999

@@ -22,13 +22,19 @@ if has('gui_running')
 	winpos 40 40
 	" Setting inner content lines and columns
 	""""set lines=35 columns=140
-	set lines=30 columns=96
+	set lines=30 columns=120
 
 	" Setting Max window
 	""""set lines=999 columns=999
 
 	" Setting GUI font and size
-	set guifont=Maple_Mono_NF_CN:h12
+	if 0
+	elseif has("gui_win32")
+		:set guifont=IosevkaTerm_NFM:h12
+	elseif has("gui_gtk")
+		:set guifont=IosevkaTerm\ NFM\ Regular\ 14
+	endif
+	
 endif
 
 

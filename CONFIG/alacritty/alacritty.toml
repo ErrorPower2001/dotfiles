@@ -1,21 +1,21 @@
-general.import = [
-	""
-]
+#...general.import = [
+#...	""
+#...]
 
 cursor.style.shape = "Underline"
 
 font.size = 12.0
 
-font.bold.family = "Maple Mono NF CN"
+font.bold.family = "IosevkaTerm NFM"
 font.bold.style = "Bold"
 
-font.bold_italic.family = "Maple Mono NF CN"
+font.bold_italic.family = "IosevkaTerm NFM"
 font.bold_italic.style = "BoldItalic"
 
-font.italic.family = "Maple Mono NF CN"
+font.italic.family = "IosevkaTerm NFM"
 font.italic.style = "Italic"
 
-font.normal.family = "Maple Mono NF CN"
+font.normal.family = "IosevkaTerm NFM"
 font.normal.style = "Regular"
 
 terminal.shell.program = "pwsh"
