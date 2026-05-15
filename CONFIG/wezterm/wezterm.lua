@@ -1,3 +1,5 @@
+-- vim:shiftwidth=8:noexpandtab:foldmethod=marker:
+
 -- 获取 Wezterm 接口
 local wezterm = require('wezterm')
 
@@ -9,6 +11,19 @@ wezterm.on('gui-startup',
 )
 
 local v_padding = 8
+
+local target = wezterm.target_triple
+local default_prog
+
+if     string.find(target, "windows") then
+	default_prog = { 'pwsh', '-Login' }
+elseif string.find(target, "darwin") then
+	default_prog = { '/bin/zsh', '-l' }
+elseif string.find(target, "linux") then
+	default_prog = { '/usr/bin/bash', '-l' }
+else
+	default_prog = { '/bin/sh', '-l' }
+end
 
 -- 最后，应用你的配置
 return {
@@ -43,7 +58,7 @@ return {
 	--[[
 		Launching Programs
 	--]]
-	default_prog = { 'pwsh', '-Login' },
+	default_prog = default_prog,
 
 	--[[
 		ALL
