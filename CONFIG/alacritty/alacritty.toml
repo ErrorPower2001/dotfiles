@@ -2,7 +2,11 @@
 #...	""
 #...]
 
+colors.cursor = { text = "#0000FF", cursor = "#FFFFFF" }
+
 cursor.style.shape = "Underline"
+# cursor.style.blinking = "On"
+cursor.thickness = 0.5
 
 font.size = 12.0
 
