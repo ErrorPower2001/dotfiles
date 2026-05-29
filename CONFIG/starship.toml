@@ -1,0 +1,33 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+$shell\
+\
+$username\
+$hostname\
+\
+$directory
+\
+$character\
+"""
+
+shell.pwsh_indicator = "pwsh"
+shell.nu_indicator = "nu"
+shell.unknown_indicator = "starship"
+shell.format = "[](fg:blue bg:none inverted)[ $indicator ](fg:7 bg:4)[](fg:4 bg:none)"
+shell.disabled = false
+
+username.show_always = true
+username.format = "[ $user](fg:green bg:none inverted)"
+hostname.ssh_only = false
+hostname.format = "[@$hostname ](fg:green bg:none inverted)[](fg:green bg:none)"
+
+directory.format = "[ $path ]($style inverted)[$read_only ]($read_only_style inverted)[]($style)"
+
+character.success_symbol = "[:](bold green)"
+character.error_symbol = "[!](bold red)"
+character.vimcmd_symbol = "[vi:ins](bold green)"
+character.vimcmd_visual_symbol = "[vi:vis](bold yellow)"
+character.vimcmd_replace_symbol = "[vi:rep](bold purple)"
+character.vimcmd_replace_one_symbol = "[vi:rpo](bold purple)"
+character.format = "$symbol>"
