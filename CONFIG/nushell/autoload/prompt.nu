@@ -19,11 +19,11 @@ $env.PROMPT_COMMAND = { ||
 		(powerline --background-color 42 --content "Nushell")
 		(powerline --background-color 44 --content $"\e[(37 + 10)m(whoami)@((sys host).hostname)")
 
-		"\e[7;35m\u{e0b0}\e[0m"
-		"\e[45m "
+		"\e[7;90m\u{e0b0}\e[0m"
+		"\e[100m "
 		$"(do $__ORIGINAL__PROMPT_COMMAND)"
-		"\e[45m "
-		"\e[0;35m\u{e0b0}\e[0m"
+		"\e[100m "
+		"\e[0;90m\u{e0b0}\e[0m"
 
 		"\n\b"
 	] | str join
