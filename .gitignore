@@ -1,6 +1,7 @@
 .ssh/
 
 **/localonly.*
+**/[0-9][0-9]*-localonly.*
 
 HOME.VIM/plugged/
 HOME.VIM/undodir/
