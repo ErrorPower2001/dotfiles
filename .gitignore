@@ -1,4 +1,7 @@
 .ssh/
+
+**/localonly.*
+
 HOME.VIM/plugged/
 HOME.VIM/undodir/
 CONFIG/alacritty/themes/
