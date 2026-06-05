@@ -25,7 +25,7 @@ $env.PROMPT_COMMAND = { ||
 		"\e[100m "
 		"\e[0;90m\u{e0b0}\e[0m"
 
-		"\n\b"
+		"\n"
 	] | str join
 }
 
